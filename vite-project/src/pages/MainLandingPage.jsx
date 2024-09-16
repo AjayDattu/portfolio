@@ -3,7 +3,6 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Spline from '@splinetool/react-spline';
 import Particles from "../components/Particlesdemo";
-import { SlightFlip } from "@/lib/components/core/default/slightflip";
 
 const MainLandingPage = () => {
   useEffect(() => {
@@ -27,12 +26,10 @@ const MainLandingPage = () => {
 
       {/* Heading centered with flex */}
       <div className="z-20">
-        <SlightFlip>
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Hello</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300">Additional description or content goes here.</p>
         </div>
-      </SlightFlip>
       </div>
     </div>
   );
