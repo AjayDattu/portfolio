@@ -8,7 +8,7 @@ const RocketLaunchPage = () => {
   const [showVideo, setShowVideo] = useState(false);
   const navigate = useNavigate();
    useEffect(()=>{
-        Aos.init({duration:2000})
+        Aos.init({duration:500})
     },[])
   const handleClick = () => {
     setShowVideo(true);
@@ -27,7 +27,7 @@ const RocketLaunchPage = () => {
           Launch Rocket
         </button>
       ) : (
-        <div className="absolute inset-0 flex items-center justify-center w-100 h-full" data-aos = "zoom-out">
+        <div className="absolute inset-0 flex items-center justify-center w-100" data-aos = "fade-up">
           <iframe
             src="https://lottie.host/embed/690163b8-d621-4234-8718-ea618616d463/cIDMYiYeod.json"
             className="w-full h-full"
