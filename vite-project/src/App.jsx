@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RocketLaunchPage from './pages/RocketLaunchPage';
 import MainLandingPage from './pages/MainLandingPage';
+import MyWorks from './pages/MyWorks';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<RocketLaunchPage />} />
         <Route path="/main-landing" element={<MainLandingPage />} />
+        <Route path="/MyWork" element={<MyWorks />} />
       </Routes>
     </Router>
   );
