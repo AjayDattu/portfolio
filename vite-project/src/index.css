@@ -41,7 +41,7 @@ span {
         font-style: normal;
         font-variation-settings:
             "wdth" 100;
-    -webkit-text-stroke: 1px #f0eef4;
+    -webkit-text-stroke: 0.7px #f0eef4;
     color: transparent;
     font-weight: 1000;
     font-size: 200px;

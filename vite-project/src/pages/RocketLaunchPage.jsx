@@ -33,8 +33,6 @@ const RocketLaunchPage = () => {
         {/* You can adjust the number of meteors */}
        <Meteors number={20} />
       {!showVideo ? (
-        <div>
-        <Welcome/>
         <button className="btn" onClick={handleClick}>
           <span></span>
           <span></span>
@@ -42,7 +40,6 @@ const RocketLaunchPage = () => {
           <span></span>
           <span>Launch</span>
         </button>
-        </div>
       ) : (
   
         <div className="absolute inset-0 flex items-center justify-center w-full h-full" data-aos="fade-up">

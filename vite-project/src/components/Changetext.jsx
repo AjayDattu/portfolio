@@ -26,7 +26,7 @@ const Welcome = () => {
   const animationProps = useSpring({
     opacity: 1,
     transform: "scale(1)",
-    from: { opacity: 0, transform: "scale(0.8)" },
+    from: { opacity: 1, transform: "scale(1.5)" },
     reset: true,
     config: { duration: 800 },
   });
