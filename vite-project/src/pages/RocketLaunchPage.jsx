@@ -7,6 +7,9 @@ import '../styles/button.css';
   // Import the Meteors component
   import Meteors from "../components/Meteros";
 import { Cobe } from "../components/Coba";
+import MyWorks from "./MyWorks";
+import MainLandingPage from "./MainLandingPage";
+import Welcome from "../components/Changetext";
 
 
 const RocketLaunchPage = () => {
@@ -30,6 +33,8 @@ const RocketLaunchPage = () => {
         {/* You can adjust the number of meteors */}
        <Meteors number={20} />
       {!showVideo ? (
+        <div>
+        <Welcome/>
         <button className="btn" onClick={handleClick}>
           <span></span>
           <span></span>
@@ -37,6 +42,7 @@ const RocketLaunchPage = () => {
           <span></span>
           <span>Launch</span>
         </button>
+        </div>
       ) : (
   
         <div className="absolute inset-0 flex items-center justify-center w-full h-full" data-aos="fade-up">
