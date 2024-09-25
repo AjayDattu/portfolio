@@ -7,6 +7,10 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <Router>
+       <div className="background-container fixed inset-0 z-0">
+        <div className="stars"></div>
+        <div className="twinkling"></div>
+      </div>
       <Routes>
         <Route path="/" element={<RocketLaunchPage />} />
         <Route path="/main-landing" element={<MainLandingPage />} />
