@@ -21,37 +21,21 @@ const RocketLaunchPage = () => {
   }, []);
 
   const handleClick = () => {
-    setShowVideo(true);
-    setTimeout(() => {
-      navigate("/main-landing");
-    }, 3500);  // Transition to the landing page after 3.5 seconds
+      navigate("/main-landing"); 
   };
 
   return (
     <div className="relative flex items-center justify-center h-screen w-screen bg-black overflow-hidden">
-      {/* Meteors Background */}
-        {/* You can adjust the number of meteors */}
-       <Meteors number={20} />
-      {!showVideo ? (
+     
+      
         <button className="btn" onClick={handleClick}>
           <span></span>
           <span></span>
           <span></span>
           <span></span>
-          <span>Launch</span>
+          <span>Explore(Damo)</span>
         </button>
-      ) : (
-  
-        <div className="absolute inset-0 flex items-center justify-center w-full h-full" data-aos="fade-up">
-          <iframe
-            src="https://lottie.host/embed/690163b8-d621-4234-8718-ea618616d463/cIDMYiYeod.json"
-            className="w-full h-full"
-            style={{ border: 'none' }}
-            title="Rocket Animation"
-          ></iframe>
-        </div>
-      )}
-    </div>
+      </div>
   );
 };
 

@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RocketLaunchPage from './pages/RocketLaunchPage';
 import MainLandingPage from './pages/MainLandingPage';
 import MyWorks from './pages/MyWorks';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
