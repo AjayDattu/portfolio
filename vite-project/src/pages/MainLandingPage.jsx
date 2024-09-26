@@ -75,10 +75,10 @@ const MainLandingPage = () => {
       </div>
 
       {/* Additional Section */}
-      <div className="h-screen flex flex-col justify-center items-center text-white">
-        <h2 className="text-4xl mb-4">Welcome to the Next Section</h2>
-        <p className="text-lg">Scroll to explore more content.</p>
+      <div className="h-screen flex flex-col text-white">
+        <span>About</span>
       </div>
+      
     </div>
   );
 };
