@@ -18,7 +18,7 @@ const MainLandingPage = () => {
   ];
   
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: 3000 });
 
     // Change the text dynamically every 3 seconds
     const interval = setInterval(() => {
@@ -74,9 +74,9 @@ const MainLandingPage = () => {
       {/* Additional Section */}
       <div className="h-screen flex flex-col text-white">
         <span>Works</span>
-        <div className="z-10">
-          <div className="text-left fs-50">I Craft</div>
-          <div id="text">Immersive and visually captivating UI interactions that elevate user experiences.</div>
+        <div className="z-10 flex flex-col" data-aos="fade-in">
+          <div id="inner-text">I Craft</div>
+          <div id="text">captivating UI interactions that enhance user experiences.</div>
         </div>
       </div>
       <div className="h-screen flex justify-right item-right flex-col text-white">
