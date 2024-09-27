@@ -37,10 +37,7 @@ const MainLandingPage = () => {
       {/* Main Landing Page Section */}
       <Navbar/>
       <div className="fixed inset-0 w-full h-full">
-        <Spline
-          scene="https://prod.spline.design/su6zZK3bihWlIOZy/scene.splinecode"
-          className="w-full h-full"
-        />
+        <Spline scene="https://prod.spline.design/su6zZK3bihWlIOZy/scene.splinecode" />
       </div>
        <div className="mt-8 z-10 fixed flex gap-1 bottom-4 left-2">
           <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
@@ -76,9 +73,21 @@ const MainLandingPage = () => {
 
       {/* Additional Section */}
       <div className="h-screen flex flex-col text-white">
+        <span>Works</span>
+        <div className="z-10">
+          <div className="text-left fs-50">I Craft</div>
+          <div id="text">Immersive and visually captivating UI interactions that elevate user experiences.</div>
+        </div>
+      </div>
+      <div className="h-screen flex justify-right item-right flex-col text-white">
+        
+      </div>
+      <div className="h-screen flex flex-col text-white">
+
+      </div>
+       <div className="h-screen flex flex-col text-white">
         <span>About</span>
       </div>
-      
     </div>
   );
 };
