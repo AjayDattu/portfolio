@@ -5,6 +5,8 @@ import 'aos/dist/aos.css';
 import Spline from '@splinetool/react-spline';
 import { FaLinkedin, FaGithub } from 'react-icons/fa'; // For LinkedIn and GitHub icons
 import Navbar from "../components/Navbar";
+import App, { HorizontalScrollCarousel } from "../components/Marquee";
+import Example from "../components/Marquee";
 const MainLandingPage = () => {
   const navigate = useNavigate(); // Import and create an instance of navigate
   const [currentText, setCurrentText] = useState(0); // Track the current text index
@@ -72,15 +74,23 @@ const MainLandingPage = () => {
       </div>
 
       {/* Additional Section */}
-      <div className="h-screen flex flex-col text-white">
+      <div className="h-screen flex flex-col gap-20 text-white">
         <span>Works</span>
         <div className="z-10 flex flex-col" data-aos="fade-in">
-          <div id="inner-text">I Craft</div>
+          <div id="inner-text">I Design</div>
           <div id="text">captivating UI interactions that enhance user experiences.</div>
         </div>
       </div>
-      <div className="h-screen flex justify-right item-right flex-col text-white">
-        
+      <div className="relative flex flex-col justify-bottom h-screen text-white" data-aos="fade-in" >
+         <div id="text2" className="absolute text-6xl">Projects</div>
+         <div id="inner-text2" className="absolute">Explore my latest React projects, where I'm pushing boundaries and Below was my Work</div>
+      </div>
+
+      <div className="h-screen flex flex-col text-white">
+         <Example/>
+      </div>
+      <div className="h-screen flex flex-col text-white">
+
       </div>
       <div className="h-screen flex flex-col text-white">
 

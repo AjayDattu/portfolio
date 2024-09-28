@@ -20,7 +20,7 @@ function Navbar() {
             <Link to="/" className="text-white hover:text-blue-300">
               Home()
             </Link>
-            <Link to="/about" className="text-white hover:text-blue-300">
+            <Link to="/Resume" className="text-white hover:text-blue-300">
               Resume()
             </Link>
             <Link to="/contact" className="text-white hover:text-blue-300">

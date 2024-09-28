@@ -17,7 +17,7 @@ const RocketLaunchPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    Aos.init({ duration: 500 });
+    Aos.init({ duration: 9000 });
   }, []);
 
   const handleClick = () => {
@@ -25,16 +25,16 @@ const RocketLaunchPage = () => {
   };
 
   return (
-    <div className="relative flex items-center justify-center h-screen w-screen bg-black overflow-hidden">
-     
-      
-        <button className="btn" onClick={handleClick}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span>Explore(Damo)</span>
-        </button>
+    <div className="relative h-screen g-20 w-screen p-20" data-aos="fade-in">
+      <div className="text-2xl text-white">
+        Ajay Dattu
+      </div>
+      <div className="text-1xl text-white">
+        V-1.0
+      </div>
+      <div className="absolute hell">
+         <button className="button-89 w-20 " onClick={handleClick}>Enter</button>
+      </div>
       </div>
   );
 };
