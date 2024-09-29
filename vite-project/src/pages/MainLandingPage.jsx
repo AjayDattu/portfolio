@@ -83,7 +83,7 @@ const MainLandingPage = () => {
       </div>
       <div className="relative flex flex-col justify-bottom h-screen text-white" data-aos="fade-in" >
          <div id="text2" className="absolute text-6xl">Projects</div>
-         <div id="inner-text2" className="absolute">Explore my latest React projects, where I'm pushing boundaries and Below was my Work</div>
+         <div id="inner-text2" className="absolute">Explore my projects, where I'm pushing boundaries and Below was my Work</div>
       </div>
 
       <div className="h-screen flex flex-col text-white">

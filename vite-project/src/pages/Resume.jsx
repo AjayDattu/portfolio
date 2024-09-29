@@ -1,10 +1,16 @@
 import React from 'react';
 import dp from '../assets/Profile.jpg';
+import {  useNavigate } from 'react-router-dom';
 // Import the CSS file for custom styles
 
 const Resume = () => {
+    const navigate =useNavigate();
+    const handleClick = () => {
+    navigate("/");
+     };
     return (
         <div className="flex flex-row h-screen overflow-hidden">
+            
             <div className="relative w-1/3 h-full">
                 <img 
                     src={dp} 
@@ -17,7 +23,7 @@ const Resume = () => {
                 <header className="text-center mb-6">
                     <div className="text-lg">BHIMAVARAM, AP</div>
                 </header>
-
+                
                 {/* Education Section */}
                 <section className="mb-8">
                     <h2 className="text-2xl font-semibold border-b-2 border-blue-400 pb-2">EDUCATION</h2>

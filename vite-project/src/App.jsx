@@ -4,15 +4,22 @@ import MainLandingPage from './pages/MainLandingPage';
 import MyWorks from './pages/MyWorks';
 import Navbar from './components/Navbar';
 import Resume from './pages/Resume';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import Cursor from './components/cursor';
 
 function App() {
+  
   return (
     <Router>
+      {/* Custom cursor component */}
+
+      {/* Main content routed */}
       <Routes>
         <Route path="/" element={<RocketLaunchPage />} />
         <Route path="/main-landing" element={<MainLandingPage />} />
-        <Route path="/MyWork" element={<MyWorks />} />
-        <Route path="/Resume" element={<Resume/>} />
+        <Route path="/MyWorks" element={<MyWorks />} />
+        <Route path="/Resume" element={<Resume />} />
       </Routes>
     </Router>
   );

@@ -2,8 +2,8 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import malimg from '../assets/Malware_analysis.png'; // Importing the malware image
-
+import malimg from '../assets/malwa.jpg'; // Importing the malware image
+import net from '../assets/Network capture.png'
 const Example = () => {
   useEffect(() => {
     Aos.init({ duration: 3000 });
@@ -65,7 +65,7 @@ const Card = ({ card }) => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
+        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110 glitch"
       ></div>
 
       {/* Title Text with Blur Effect */}
@@ -87,8 +87,8 @@ const cards = [
     link: "https://github.com/AjayDattu/Malware-Analysis.git", // Link to your GitHub repository
   },
   {
-    url: "/imgs/abstract/2.jpg",
-    title: "Title 2",
+    url: net,
+    title: "Network traffic Capture",
     id: 2,
   },
   {
