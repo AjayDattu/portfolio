@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       {/* Custom cursor component */}
-
+      <Navbar/>
       {/* Main content routed */}
       <Routes>
         <Route path="/" element={<RocketLaunchPage />} />

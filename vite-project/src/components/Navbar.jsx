@@ -1,30 +1,74 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const locations = ['/Resume', '/MyWorks', '/main-landing'];
+  
+  // useNavigate and useLocation hooks
+  const navigate = useNavigate();
+  const location = useLocation();
+  const l = ['Resume', 'MyWorks','Home'];
+  // Function to get the current index based on the pathname
+  const getCurrentIndex = () => {
+    return locations.findIndex((loc) => location.pathname.includes(loc));
+  };
+
+  // State for current index
+  const [currentIndex, setCurrentIndex] = useState(getCurrentIndex());
+  
+  // useEffect to handle changes in the current index
+  useEffect(() => {
+    setCurrentIndex(getCurrentIndex());
+  }, [location.pathname]); // Update index when pathname changes
+
+  // Function to navigate to the next page
+  const handleNext = () => {
+    const newIndex = (currentIndex + 1) % locations.length; // Cycles through locations
+    setCurrentIndex(newIndex);
+    navigate(locations[newIndex]);
+  };
+
+  // Function to navigate to the previous page
+  const handlePrevious = () => {
+    const newIndex = (currentIndex - 1 + locations.length) % locations.length; // Ensures non-negative index
+    setCurrentIndex(newIndex);
+    navigate(locations[newIndex]);
+  };
 
   return (
     <nav className="bg-transparent fixed w-full z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-16 items-center">
+          {/* Previous and Next Navigation Arrows */}
+          <div className="flex items-center  w-8">
+           
+             <div className="text-white hover:text-blue-300 focus:outline-none">{l[currentIndex]} </div>
+            <button
+              onClick={handleNext}
+              className="text-white hover:text-blue-300 focus:outline-none"
+            >
+              {/* Right Arrow */}
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="text-2xl font-bold text-white">
-              They call me Damo.
-            </Link>
-          </div>
-
-          {/* Menu Links */}
-          <div className="hidden md:flex space-x-8 items-center">
-            <Link to="/" className="text-white hover:text-blue-300">
-              Home()
-            </Link>
-            <Link to="/Resume" className="text-white hover:text-blue-300">
-              Resume()
-            </Link>
-            <Link to="/contact" className="text-white hover:text-blue-300">
-              Contact()
+             India;
             </Link>
           </div>
 
@@ -35,7 +79,12 @@ function Navbar() {
               type="button"
               className="text-white hover:text-blue-300 focus:outline-none"
             >
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -54,31 +103,31 @@ function Navbar() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               to="/"
-              className="block text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md"
+              className={`block text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md ${location.pathname === '/' ? 'bg-blue-500' : ''}`}
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link
-              to="/about"
-              className="block text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md"
+              to="/Resume"
+              className={`block text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md ${location.pathname === '/Resume' ? 'bg-blue-500' : ''}`}
               onClick={() => setIsOpen(false)}
             >
-              About
+              Resume
             </Link>
             <Link
-              to="/services"
-              className="block text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md"
+              to="/MyWorks"
+              className={`block text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md ${location.pathname === '/MyWorks' ? 'bg-blue-500' : ''}`}
               onClick={() => setIsOpen(false)}
             >
-              Services
+              My Works
             </Link>
             <Link
-              to="/contact"
-              className="block text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md"
+              to="/main-landing"
+              className={`block text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md ${location.pathname === '/main-landing' ? 'bg-blue-500' : ''}`}
               onClick={() => setIsOpen(false)}
             >
-              Contact
+              Main Landing
             </Link>
           </div>
         </div>

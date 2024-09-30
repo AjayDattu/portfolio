@@ -1,6 +1,7 @@
 import React from 'react';
 import dp from '../assets/Profile.jpg';
 import {  useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 // Import the CSS file for custom styles
 
 const Resume = () => {
@@ -10,7 +11,7 @@ const Resume = () => {
      };
     return (
         <div className="flex flex-row h-screen overflow-hidden">
-            
+            <Navbar/>
             <div className="relative w-1/3 h-full">
                 <img 
                     src={dp} 

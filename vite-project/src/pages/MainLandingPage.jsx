@@ -37,7 +37,7 @@ const MainLandingPage = () => {
   return (
     <div className="relative flex flex-col min-h-screen">
       {/* Main Landing Page Section */}
-      <Navbar/>
+      
       <div className="fixed inset-0 w-full h-full">
         <Spline scene="https://prod.spline.design/su6zZK3bihWlIOZy/scene.splinecode" />
       </div>
@@ -94,6 +94,12 @@ const MainLandingPage = () => {
       </div>
       <div className="h-screen flex flex-col text-white">
 
+      </div>
+      <div className="relative flex flex-col justify-bottom h-screen text-white" data-aos="fade-in" >
+         <div id="text3" className="absolute text-6xl">Participations</div>
+         <div id="inner-text3" className="absolute">Smart India Hackathon (SIH) 2023 | Noida
+Participant Advanced to the finals, demonstrating strong problem-solving skills and the ability to deliver impactful solutions under pressure.
+Gained valuable experience in cybersecurity, software development, and teamwork while networking with industry experts.</div>
       </div>
        <div className="h-screen flex flex-col text-white">
         <span>About</span>
