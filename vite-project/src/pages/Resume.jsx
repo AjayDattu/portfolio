@@ -2,6 +2,7 @@ import React from 'react';
 import dp from '../assets/Profile.jpg';
 import {  useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import AnimatedPage from '../components/Animation';
 // Import the CSS file for custom styles
 
 const Resume = () => {
@@ -10,6 +11,7 @@ const Resume = () => {
     navigate("/");
      };
     return (
+        <AnimatedPage>
         <div className="flex flex-row h-screen overflow-hidden">
             <Navbar/>
             <div className="relative w-1/3 h-full">
@@ -117,6 +119,7 @@ const Resume = () => {
                 </section>
             </div>
         </div>
+        </AnimatedPage>
     );
 };
 

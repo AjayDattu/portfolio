@@ -7,6 +7,8 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa'; // For LinkedIn and GitHu
 import Navbar from "../components/Navbar";
 import App, { HorizontalScrollCarousel } from "../components/Marquee";
 import Example from "../components/Marquee";
+import AnimatedPage from "../components/Animation";
+
 const MainLandingPage = () => {
   const navigate = useNavigate(); // Import and create an instance of navigate
   const [currentText, setCurrentText] = useState(0); // Track the current text index
@@ -35,9 +37,10 @@ const MainLandingPage = () => {
   };
 
   return (
+    
     <div className="relative flex flex-col min-h-screen">
       {/* Main Landing Page Section */}
-      
+      <Navbar/>
       <div className="fixed inset-0 w-full h-full">
         <Spline scene="https://prod.spline.design/su6zZK3bihWlIOZy/scene.splinecode" />
       </div>
@@ -87,9 +90,6 @@ const MainLandingPage = () => {
       </div>
 
       <div className="h-screen flex flex-col text-white">
-         <Example/>
-      </div>
-      <div className="h-screen flex flex-col text-white">
 
       </div>
       <div className="h-screen flex flex-col text-white">
@@ -105,6 +105,7 @@ Gained valuable experience in cybersecurity, software development, and teamwork 
         <span>About</span>
       </div>
     </div>
+  
   );
 };
 
