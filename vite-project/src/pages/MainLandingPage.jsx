@@ -33,7 +33,8 @@ const MainLandingPage = () => {
   }, []);
 
   const handleClick = () => {
-    navigate("/MyWork");
+    console.log("hello");
+    navigate("/MyWorks");
   };
 
   return (
@@ -87,6 +88,7 @@ const MainLandingPage = () => {
       <div className="relative flex flex-col justify-bottom h-screen text-white" data-aos="fade-in" >
          <div id="text2" className="absolute text-6xl">Projects</div>
          <div id="inner-text2" className="absolute">Explore my projects, where I'm pushing boundaries and Below was my Work</div>
+         <button className="button-89 absolute left-6" onClick={handleClick} >Explore</button>
       </div>
 
       <div className="h-screen flex flex-col text-white">
