@@ -43,7 +43,7 @@ const MainLandingPage = () => {
       {/* Main Landing Page Section */}
       <Navbar/>
       <div className="fixed inset-0 w-full h-full">
-        <Spline scene="https://prod.spline.design/su6zZK3bihWlIOZy/scene.splinecode" />
+        <Spline scene="https://prod.spline.design/su6zZK3bihWlIOZy/scene.splinecode"/>
       </div>
        <div className="mt-8 z-10 fixed flex gap-1 bottom-4 left-2">
           <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
@@ -54,7 +54,7 @@ const MainLandingPage = () => {
           </a>
         </div>
       {/* Content on top of the Spline object */}
-      <div className="h-screen flex flex-col items-center mb-4 text-white">
+      <div className="h-screen flex flex-col items-center mb-4 text-white bg-black">
         <div className="flex flex-col space-y-4">
           {/* AJAY Text */}
           <div>
@@ -78,23 +78,26 @@ const MainLandingPage = () => {
       </div>
 
       {/* Additional Section */}
-      <div className="h-screen flex flex-col gap-20 text-white">
+      <div className="h-screen flex flex-col gap-20 text-white ">
         <span>Works</span>
         <div className="z-10 flex flex-col" data-aos="fade-in">
           <div id="inner-text">I Design</div>
           <div id="text">captivating UI interactions that enhance user experiences.</div>
         </div>
       </div>
-      <div className="relative flex flex-col justify-bottom h-screen text-white" data-aos="fade-in" >
+      <div className="relative flex flex-col justify-bottom h-screen text-white bg-black" data-aos="fade-in" >
          <div id="text2" className="absolute text-6xl">Projects</div>
          <div id="inner-text2" className="absolute">Explore my projects, where I'm pushing boundaries and Below was my Work</div>
-         <button className="button-89 absolute left-6" onClick={handleClick} >Explore</button>
+         
       </div>
 
-      <div className="h-screen flex flex-col text-white">
-
+      <div className="relativeh-screen flex flex-col text-white bg-black">
+        <Example/>S
       </div>
-      <div className="h-screen flex flex-col text-white">
+      <div className="relative h-screen flex flex-col text-white bg-black">
+        {/* <Example/> */}
+      </div>
+      <div className="h-screen flex flex-col text-white bg-black">
 
       </div>
       <div className="relative flex flex-col justify-bottom h-screen text-white" data-aos="fade-in" >

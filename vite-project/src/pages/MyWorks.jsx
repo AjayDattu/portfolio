@@ -1,257 +1,281 @@
 // App.jsx
-import personImg from '../assets/person.png';
-import phoneImg from '../assets/phone.png';
-import phoneAppImg from '../assets/phone.png';
-import laptopImg from '../assets/laptop.png';
-import laptopAppImg from '../assets/laptop.png';
-import bg1 from '../assets/bg1.png';
-import bg2 from '../assets/bg2.png';
-import githubImg from '../assets/github.png';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { Suspense, useState } from 'react';
 // src/App.jsx
-import React, { useEffect, useRef } from 'react';
 import '../styles/project.css' // Importing the CSS file
+import left from '../assets/in-aas/left-arrow.png'
+import right from '../assets/in-aas/right-arrow.png'
+const myProjects = [
+  {
+    title: 'Podcastr - AI Podcast Platform',
+    desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+    subdesc:
+      'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
+    href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+    texture: '/textures/project/project1.mp4',
+    logo: '/assets/project-logo1.png',
+    logoStyle: {
+      backgroundColor: '#2A1816',
+      border: '0.2px solid #36201D',
+      boxShadow: '0px 0px 60px 0px #AA3C304D',
+    },
+    spotlight: '/assets/spotlight1.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 4,
+        name: 'Framer Motion',
+        path: '/assets/framer.png',
+      },
+    ],
+  },
+  {
+    title: 'LiveDoc - Real-Time Google Docs Clone',
+    desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+    subdesc:
+      'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
+    href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+    texture: '/textures/project/project2.mp4',
+    logo: '/assets/project-logo2.png',
+    logoStyle: {
+      backgroundColor: '#13202F',
+      border: '0.2px solid #17293E',
+      boxShadow: '0px 0px 60px 0px #2F6DB54D',
+    },
+    spotlight: '/assets/spotlight2.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 4,
+        name: 'Framer Motion',
+        path: '/assets/framer.png',
+      },
+    ],
+  },
+  {
+    title: 'CarePulse - Health Management System',
+    desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+    subdesc:
+      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
+    href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+    texture: '/textures/project/project3.mp4',
+    logo: '/assets/project-logo3.png',
+    logoStyle: {
+      backgroundColor: '#60f5a1',
+      background:
+        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+      border: '0.2px solid rgba(208, 213, 221, 1)',
+      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 4,
+        name: 'Framer Motion',
+        path: '/assets/framer.png',
+      },
+    ],
+  },
+  {
+    title: 'Horizon - Online Banking Platform',
+    desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
+    subdesc:
+      'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
+    href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
+    texture: '/textures/project/project4.mp4',
+    logo: '/assets/project-logo4.png',
+    logoStyle: {
+      backgroundColor: '#0E1F38',
+      border: '0.2px solid #0E2D58',
+      boxShadow: '0px 0px 60px 0px #2F67B64D',
+    },
+    spotlight: '/assets/spotlight4.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 4,
+        name: 'Framer Motion',
+        path: '/assets/framer.png',
+      },
+    ],
+  },
+  {
+    title: 'Imaginify - AI Photo Manipulation App',
+    desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
+    subdesc:
+      'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
+    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
+    texture: '/textures/project/project5.mp4',
+    logo: '/assets/project-logo5.png',
+    logoStyle: {
+      backgroundColor: '#1C1A43',
+      border: '0.2px solid #252262',
+      boxShadow: '0px 0px 60px 0px #635BFF4D',
+    },
+    spotlight: '/assets/spotlight5.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 4,
+        name: 'Framer Motion',
+        path: '/assets/framer.png',
+      },
+    ],
+  },
+];
+const projectCount = myProjects.length;
 
 
 const MyWorks = () => {
-  // Refs for scroll animations
-  const boxContainerRef = useRef(null);
-  const saluteTextContainerRef = useRef(null);
-  const saluteImgContainerRef = useRef(null);
-  const nameRef = useRef(null);
-  const jobTitleContainersRef = useRef([]);
-  const jobTitlesRef = useRef([]);
-  const projectsTitleRef = useRef(null);
-  const phonesRef = useRef([]);
-  const laptopRef = useRef(null);
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
-  useEffect(() => {
-    // Initialize GitHub boxes
-    const boxContainer = boxContainerRef.current;
-    const list = [
-      0, 1, 2, 3, 41, 42, 43, 44, 82, 83, 123, 124, 125, 126, 164, 165, 166, 167,
-      205, 206, 246, 247, 287, 288, 5, 6, 46, 47, 87, 88, 128, 129, 169, 170, 210,
-      211, 251, 252, 292, 293, 8, 9, 14, 15, 49, 50, 51, 90, 91, 92, 131, 132,
-      133, 134, 172, 173, 213, 214, 254, 255, 295, 296, 175, 176, 217, 177, 218,
-      259, 55, 56, 96, 97, 137, 138, 178, 179, 219, 220, 260, 261, 217, 218, 259,
-      260, 261, 301, 302, 17, 18, 19, 58, 59, 60, 61, 99, 100, 102, 103, 140, 141,
-      144, 181, 182, 185, 222, 223, 225, 226, 263, 264, 265, 266, 304, 305, 306,
-      24, 25, 65, 66, 67, 106, 107, 108, 147, 148, 149, 150, 188, 189, 229, 230,
-      270, 271, 311, 312, 67, 108, 149, 150, 191, 232, 192, 233, 274, 234, 275,
-      316, 194, 235, 276, 154, 195, 236, 73, 114, 155, 33, 34, 74, 75, 115, 116,
-      156, 157, 197, 198, 238, 239, 279, 280, 320, 321, 36, 37, 38, 39, 77, 78,
-      79, 80, 118, 119, 159, 160, 161, 162, 200, 201, 202, 203, 241, 242, 282,
-      283, 284, 285, 323, 324, 325, 326,
-    ];
-
-    for (let i = 0; i < 365; i++) {
-      const el = document.createElement('div');
-      el.className = list.includes(i) ? 'box active' : 'box';
-      boxContainer.appendChild(el);
-    }
-
-    // Scroll event listener
-    const handleScroll = () => {
-      const offsetY = window.scrollY;
-
-      // Transformations for INTRODUCTION
-      if (saluteTextContainerRef.current) {
-        saluteTextContainerRef.current.style.transform = `translateY(${offsetY * 0.1}px)`;
+  const handleNavigation = (direction) => {
+    setSelectedProjectIndex((prevIndex) => {
+      if (direction === 'previous') {
+        return prevIndex === 0 ? projectCount - 1 : prevIndex - 1;
+      } else {
+        return prevIndex === projectCount - 1 ? 0 : prevIndex + 1;
       }
+    });
+  };
 
-      if (saluteImgContainerRef.current) {
-        saluteImgContainerRef.current.style.transform = `translate(${offsetY * 0.4}px, ${offsetY * 0.7}px)`;
-      }
+  useGSAP(() => {
+    gsap.fromTo(`.animatedText`, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.2, ease: 'power2.inOut' });
+  }, [selectedProjectIndex]);
 
-      if (nameRef.current) {
-        nameRef.current.style.transform = `translateX(${offsetY * 0.1}px)`;
-      }
+  const currentProject = myProjects[selectedProjectIndex];
 
-      jobTitleContainersRef.current.forEach((ref, index) => {
-        if (ref) {
-          ref.style.backgroundPositionY = `${index === 0 ? offsetY * 0.5 : -offsetY * 0.5}px`;
-        }
-      });
 
-      if (jobTitlesRef.current[0]) {
-        jobTitlesRef.current[0].style.transform = `translateX(calc(200vh - ${offsetY}px))`;
-      }
-
-      if (jobTitlesRef.current[1]) {
-        jobTitlesRef.current[1].style.transform = `translateX(calc(-300vh + ${offsetY}px))`;
-      }
-
-      if (projectsTitleRef.current) {
-        projectsTitleRef.current.style.transform = `translateY(calc(400vh - ${offsetY}px))`;
-      }
-
-      phonesRef.current.forEach((ref, index) => {
-        if (ref) {
-          let translateXValue;
-          if (index === 0) {
-            translateXValue = `calc(500vh - ${offsetY}px)`;
-          } else if (index === 1) {
-            translateXValue = `calc(750vh - ${offsetY}px)`;
-          }
-          ref.style.transform = `translateX(${translateXValue})`;
-        }
-      });
-
-      if (laptopRef.current) {
-        laptopRef.current.style.transform = `translateX(calc(600vh - ${offsetY}px))`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    // Cleanup on unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+ 
 
   return (
-    <div className="container bg-black">
-      {/* INTRODUCTION */}
-      <div className="intro">
-        {/* Salute Section */}
-        <div className="salute">
-          <div className="saluteTextContainer" ref={saluteTextContainerRef}>
-            <h1 className="saluteText">Hi</h1>
+     <section className="c-space my-20">
+      <div className="head-text">My Selected Work</div>
+
+      <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full text-white">
+        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
+          <div className="absolute top-0 right-0">
+            <img src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
           </div>
-          <div className="saluteImgContainer" ref={saluteImgContainerRef}>
-            <img src={personImg} alt="Person" className="saluteImg" />
+
+          <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg" style={currentProject.logoStyle}>
+            <img className="w-10 h-10 shadow-sm" src={currentProject.logo} alt="logo" />
+          </div>
+
+          <div className="flex flex-col gap-5 text-white-600 my-5">
+            <div className="text-white text-2xl font-semibold animatedText">{currentProject.title}</div>
+
+            <div className="animatedText">{currentProject.desc}</div>
+            <div className="animatedText">{currentProject.subdesc}</div>
+          </div>
+
+          <div className="flex items-center justify-between flex-wrap gap-5">
+            <div className="flex items-center gap-3">
+              {currentProject.tags.map((tag, index) => (
+                <div key={index} className="tech-logo">
+                  <img src={tag.path} alt={tag.name} />
+                </div>
+              ))}
+            </div>
+
+            <a
+              className="flex items-center gap-2 cursor-pointer text-white-600"
+              href={currentProject.href}
+              target="_blank"
+              rel="noreferrer">
+              <div>Check Live Site</div>
+              <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3 " />
+            </a>
+          </div>
+
+          <div className="flex justify-between items-center mt-7">
+            <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
+              <img src={left} alt="left arrow" />
+            </button>
+
+            <button className="arrow-btn" onClick={() => handleNavigation('next')}>
+              <img src={right} alt="right arrow" className="w-4 h-4" />
+            </button>
           </div>
         </div>
 
-        {/* Name Section */}
-        <div className="nameContainer" ref={nameRef}>
-          <h2 className="name">I'm John</h2>
-        </div>
-
-        {/* Job Titles */}
-        <div
-          className="jobTitleContainer dark"
-          ref={(el) => (jobTitleContainersRef.current[0] = el)}
-        >
-          <h2 className="jobTitle" ref={(el) => (jobTitlesRef.current[0] = el)}>
-            a Web Developer
-          </h2>
-        </div>
-        <div
-          className="jobTitleContainer purple"
-          ref={(el) => (jobTitleContainersRef.current[1] = el)}
-        >
-          <h2 className="jobTitle" ref={(el) => (jobTitlesRef.current[1] = el)}>
-            and Designer
-          </h2>
+        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+          
         </div>
       </div>
-
-      {/* PROJECTS */}
-      <div className="projects">
-        <h1 className="projectsTitle" ref={projectsTitleRef}>
-          Here are some of my projects
-        </h1>
-
-        {/* Project 1 */}
-        <div className="project">
-          <div className="phone" ref={(el) => (phonesRef.current[0] = el)}>
-            <img src={phoneImg} alt="Phone" />
-            <div className="phoneScreen">
-              <img src={phoneAppImg} alt="Phone App" className="phoneApp" />
-            </div>
-          </div>
-          <div className="projectDetail">
-            <h1 className="projectTitle">Vortex</h1>
-            <div className="projectDesc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-              repudiandae quia natus et iste earum ab fugiat eum ipsam, illum
-              vitae nihil quasi recusandae? Nesciunt laudantium recusandae illo
-              veritatis possimus! Accusamus repudiandae quia natus et iste earum
-              ab fugiat eum ipsam, illum vitae nihil quasi recusandae? Nesciunt
-              laudantium recusandae illo veritatis possimus! laudantium
-              recusandae illo veritatis possimus! recusandae illo veritatis.
-            </div>
-            <button className="projectButton">Learn More</button>
-          </div>
-        </div>
-
-        {/* Project 2 */}
-        <div className="project">
-          <div className="laptop" ref={laptopRef}>
-            <img src={laptopImg} alt="Laptop" />
-            <div className="laptopScreen">
-              <img src={laptopAppImg} alt="Laptop App" className="laptopApp" />
-            </div>
-          </div>
-          <div className="projectDetail">
-            <h1 className="projectTitle">Vortex</h1>
-            <div className="projectDesc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-              repudiandae quia natus et iste earum ab fugiat eum ipsam, illum
-              vitae nihil quasi recusandae? Nesciunt laudantium recusandae illo
-              veritatis possimus! Accusamus repudiandae quia natus et iste earum
-              ab fugiat eum ipsam, illum vitae nihil quasi recusandae? Nesciunt
-              laudantium recusandae illo veritatis possimus! laudantium
-              recusandae illo veritatis possimus! recusandae illo veritatis.
-            </div>
-            <button className="projectButton">Learn More</button>
-          </div>
-        </div>
-
-        {/* Project 3 */}
-        <div className="project">
-          <div className="phone" ref={(el) => (phonesRef.current[1] = el)}>
-            <img src={phoneImg} alt="Phone" />
-            <div className="phoneScreen">
-              <img src={phoneAppImg} alt="Phone App" className="phoneApp" />
-            </div>
-          </div>
-          <div className="projectDetail">
-            <h1 className="projectTitle">Vortex</h1>
-            <div className="projectDesc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-              repudiandae quia natus et iste earum ab fugiat eum ipsam, illum
-              vitae nihil quasi recusandae? Nesciunt laudantium recusandae illo
-              veritatis possimus! Accusamus repudiandae quia natus et iste earum
-              ab fugiat eum ipsam, illum vitae nihil quasi recusandae? Nesciunt
-              laudantium recusandae illo veritatis possimus! laudantium
-              recusandae illo veritatis possimus! recusandae illo veritatis.
-            </div>
-            <button className="projectButton">Learn More</button>
-          </div>
-        </div>
-      </div>
-
-      {/* GITHUB */}
-      <div className="githubContainer">
-        <h1 className="githubTitle">Want to see all projects?</h1>
-        <div className="githubChart">
-          <div className="dates">
-            <div>Jan</div>
-            <div>Feb</div>
-            <div>Mar</div>
-            <div>Apr</div>
-            <div>May</div>
-            <div>Jun</div>
-            <div>Jul</div>
-            <div>Agu</div>
-            <div>Sep</div>
-            <div>Oct</div>
-            <div>Nov</div>
-            <div>Dec</div>
-          </div>
-          <div className="boxContainer" ref={boxContainerRef}></div>
-          <h1 className="githubTitle">ON GITHUB</h1>
-        </div>
-        <div className="githubSm">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-            <img src={githubImg} alt="GitHub" />
-          </a>
-          <h2>Find Me on Github</h2>
-        </div>
-      </div>
-    </div>
+    </section>
   );
 };
 

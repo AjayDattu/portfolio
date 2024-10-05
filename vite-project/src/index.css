@@ -9,7 +9,7 @@ body{
             font-style: normal;
             font-variation-settings:
                 "wdth" 100;
-        background: linear-gradient(300deg, #000000, #03115e, #000000);
+        background: linear-gradient(300deg, #2E236C, #17153B, #17153B);
             background-size: 180% 180%;
             animation: gradient-animation 5s ease infinite;
     }
