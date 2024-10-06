@@ -6,6 +6,17 @@ import { Suspense, useState } from 'react';
 import '../styles/project.css' // Importing the CSS file
 import left from '../assets/in-aas/left-arrow.png'
 import right from '../assets/in-aas/right-arrow.png'
+import spot1 from '../assets/in-aas/spotlight1.png'
+import spot2 from '../assets/in-aas/spotlight2.png'
+import spot3 from '../assets/in-aas/spotlight3.png'
+import spot4 from '../assets/in-aas/spotlight4.png'
+import spot5 from '../assets/in-aas/spotlight5.png'
+
+import rea from '../assets/in-aas/react.svg';
+import tail from '../assets/in-aas/tailwindcss.png'
+import fram from '../assets/in-aas/framer.png'
+import Navbar from '../components/Navbar';
+
 const myProjects = [
   {
     title: 'Podcastr - AI Podcast Platform',
@@ -20,7 +31,7 @@ const myProjects = [
       border: '0.2px solid #36201D',
       boxShadow: '0px 0px 60px 0px #AA3C304D',
     },
-    spotlight: '/assets/spotlight1.png',
+    spotlight: spot3,
     tags: [
       {
         id: 1,
@@ -57,7 +68,7 @@ const myProjects = [
       border: '0.2px solid #17293E',
       boxShadow: '0px 0px 60px 0px #2F6DB54D',
     },
-    spotlight: '/assets/spotlight2.png',
+    spotlight: spot2,
     tags: [
       {
         id: 1,
@@ -96,17 +107,17 @@ const myProjects = [
       border: '0.2px solid rgba(208, 213, 221, 1)',
       boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
     },
-    spotlight: '/assets/spotlight3.png',
+    spotlight: spot1,
     tags: [
       {
         id: 1,
         name: 'React.js',
-        path: '/assets/react.svg',
+        path: rea,
       },
       {
         id: 2,
         name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        path: tail,
       },
       {
         id: 3,
@@ -116,7 +127,7 @@ const myProjects = [
       {
         id: 4,
         name: 'Framer Motion',
-        path: '/assets/framer.png',
+        path: fram,
       },
     ],
   },
@@ -133,7 +144,7 @@ const myProjects = [
       border: '0.2px solid #0E2D58',
       boxShadow: '0px 0px 60px 0px #2F67B64D',
     },
-    spotlight: '/assets/spotlight4.png',
+    spotlight: spot4,
     tags: [
       {
         id: 1,
@@ -170,7 +181,7 @@ const myProjects = [
       border: '0.2px solid #252262',
       boxShadow: '0px 0px 60px 0px #635BFF4D',
     },
-    spotlight: '/assets/spotlight5.png',
+    spotlight: spot5,
     tags: [
       {
         id: 1,
@@ -221,8 +232,11 @@ const MyWorks = () => {
  
 
   return (
+    <div>
+      <Navbar/>
      <section className="c-space my-20">
-      <div className="head-text">My Selected Work</div>
+      
+      <div className="head-text ">My Selected Work</div>
 
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full text-white">
         <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
@@ -262,7 +276,7 @@ const MyWorks = () => {
 
           <div className="flex justify-between items-center mt-7">
             <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
-              <img src={left} alt="left arrow" />
+              <img src={left} alt="left arrow" className='rounded-full border-red-950' />
             </button>
 
             <button className="arrow-btn" onClick={() => handleNavigation('next')}>
@@ -272,10 +286,11 @@ const MyWorks = () => {
         </div>
 
         <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-          
+           <iframe className="w-full h-full" src="https://lottie.host/embed/fa137fbc-cbde-48ae-b7ba-c0936d3cf026/AgQkq0IogE.json"></iframe>
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

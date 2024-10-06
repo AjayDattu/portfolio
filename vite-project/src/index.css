@@ -9,9 +9,8 @@ body{
             font-style: normal;
             font-variation-settings:
                 "wdth" 100;
-        background: linear-gradient(300deg, #2E236C, #17153B, #17153B);
-            background-size: 180% 180%;
-            animation: gradient-animation 5s ease infinite;
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+           
     }
 
 @keyframes gradient-animation {
@@ -75,7 +74,7 @@ p {
             "wdth" 100;
     letter-spacing: 4px;
     overflow: hidden;
-    background: linear-gradient(90deg, #000, #fff, #000);
+    background: linear-gradient(90deg, #fff, #000, #fff);
     background-repeat: no-repeat;
     background-size: 80%;
     animation: animate1 3s linear infinite;
