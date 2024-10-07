@@ -7,7 +7,7 @@ import Resume from './pages/Resume';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Cursor from './components/cursor';
-
+import { AudioProvider } from './context/Audio';
 function App() {
   
   return (

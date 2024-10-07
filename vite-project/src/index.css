@@ -9,7 +9,7 @@ body{
             font-style: normal;
             font-variation-settings:
                 "wdth" 100;
-    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(1, 10, 75) 0%, rgb(0, 0, 0) 99.4%);
            
     }
 
@@ -74,7 +74,7 @@ p {
             "wdth" 100;
     letter-spacing: 4px;
     overflow: hidden;
-    background: linear-gradient(90deg, #fff, #000, #fff);
+    background: linear-gradient(90deg, #ffd700, #000, #ffd700);
     background-repeat: no-repeat;
     background-size: 80%;
     animation: animate1 3s linear infinite;

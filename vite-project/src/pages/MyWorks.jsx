@@ -16,6 +16,8 @@ import rea from '../assets/in-aas/react.svg';
 import tail from '../assets/in-aas/tailwindcss.png'
 import fram from '../assets/in-aas/framer.png'
 import Navbar from '../components/Navbar';
+import AnimatedPage from '../components/Animation';
+import { useNavigate } from 'react-router-dom';
 
 const myProjects = [
   {
@@ -211,7 +213,10 @@ const projectCount = myProjects.length;
 
 const MyWorks = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-
+  const navigate = useNavigate();
+  const handleClick = () =>{
+    navigate('/main-landing')
+  }
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) => {
       if (direction === 'previous') {
@@ -232,14 +237,16 @@ const MyWorks = () => {
  
 
   return (
-    <div>
-      <Navbar/>
+    <AnimatedPage>
+    <div className='w-full'>
+     <button className='fixed top-0 right-4 text-2xl text-white' onClick={handleClick}>X</button>
      <section className="c-space my-20">
       
-      <div className="head-text ">My Selected Work</div>
+      <div className="head-text text-white text-2xl">My Selected Work</div>
+
 
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full text-white">
-        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
+        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200 bg-black-100">
           <div className="absolute top-0 right-0">
             <img src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
           </div>
@@ -291,6 +298,7 @@ const MyWorks = () => {
       </div>
     </section>
     </div>
+    </AnimatedPage>
   );
 };
 

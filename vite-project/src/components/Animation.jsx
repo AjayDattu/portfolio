@@ -13,8 +13,8 @@ const AnimatedPage = ({ children }) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      transition={{ duration: 1, ease: "easeInOut" }}
-      style={{ transformOrigin: "center right" }} // Origin for the page-turn effect
+      transition={{ duration: 0.8, ease: [0.42, 0, 0.58, 1] }} // Smooth curve for a natural feel
+      style={{ transformOrigin: "center left" }} // Origin for a page-turn effect from the left
     >
       {children}
     </motion.div>

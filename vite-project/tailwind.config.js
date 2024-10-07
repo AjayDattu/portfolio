@@ -22,6 +22,9 @@ export default {
           600: '#AFB0B6',
           500: '#62646C',
         },
+        yellow :{
+          DEFAULT:'#08C2FF',
+        },
       },
        animation: {
         meteor: "meteor 5s linear infinite",

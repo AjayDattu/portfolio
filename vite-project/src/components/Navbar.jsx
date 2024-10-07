@@ -41,29 +41,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Previous and Next Navigation Arrows */}
-          <div className="flex items-center  w-8">
-           
-             <div className="text-white hover:text-blue-300 focus:outline-none">{l[currentIndex]} </div>
-            <button
-              onClick={handleNext}
-              className="text-white hover:text-blue-300 focus:outline-none"
-            >
-              {/* Right Arrow */}
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-          </div>
+         
 
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
