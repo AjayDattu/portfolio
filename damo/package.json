@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.7.5",
+    "@splinetool/react-spline": "^4.0.0",
     "@studio-freight/lenis": "^1.0.42",
     "antd": "^5.21.6",
     "clsx": "^2.1.1",

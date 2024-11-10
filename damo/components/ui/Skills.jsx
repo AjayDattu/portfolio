@@ -9,6 +9,7 @@ import {
 import { SiSpacex } from "react-icons/si";
 import { FiArrowRight, FiMapPin } from "react-icons/fi";
 import { useRef } from "react";
+import { HoverImageLinks } from "./Skillset";
 
 export const SmoothScrollHero = () => {
   return (
@@ -82,7 +83,7 @@ const CenterImage = () => {
         backgroundSize,
         opacity,
         backgroundImage:
-          "url(https://res.cloudinary.com/dxxics5nv/image/upload/v1731238977/IMG_5113_l4kqsu.heic)",
+          "url(https://res.cloudinary.com/dxxics5nv/image/upload/v1731239240/IMG_5113_zpayk6.jpg)",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
@@ -94,14 +95,14 @@ const ParallaxImages = () => {
   return (
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
       <ParallaxImg
-        src="https://res.cloudinary.com/dxxics5nv/image/upload/v1731238564/IMG_5113_s0vyhs.heic"
+        src=""
         alt="And example of a space launch"
         start={-200}
         end={200}
         className="w-1/3"
       />
       <ParallaxImg
-        src="https://images.unsplash.com/photo-1446776709462-d6b525c57bd3?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://media.licdn.com/dms/image/v2/D5622AQFhdV8IDlDG9Q/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1709402884622?e=1733961600&v=beta&t=j2nVEMwjGt1W7timW0gIKSeHeTtQn2GlETpUdFpcY7k"
         alt="An example of a space launch"
         start={200}
         end={-250}
@@ -162,15 +163,9 @@ const Schedule = () => {
         transition={{ ease: "easeInOut", duration: 0.75 }}
         className="mb-20 text-4xl font-black uppercase text-zinc-50"
       >
-        Launch Schedule
+        Skills & Intersts
       </motion.h1>
-      <ScheduleItem title="NG-21" date="Dec 9th" location="Florida" />
-      <ScheduleItem title="Starlink" date="Dec 20th" location="Texas" />
-      <ScheduleItem title="Starlink" date="Jan 13th" location="Florida" />
-      <ScheduleItem title="Turksat 6A" date="Feb 22nd" location="Florida" />
-      <ScheduleItem title="NROL-186" date="Mar 1st" location="California" />
-      <ScheduleItem title="GOES-U" date="Mar 8th" location="California" />
-      <ScheduleItem title="ASTRA 1P" date="Apr 8th" location="Texas" />
+      <HoverImageLinks/>
     </section>
   );
 };

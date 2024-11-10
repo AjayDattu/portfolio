@@ -68,3 +68,12 @@
     
   }
 }
+@layer components {
+  .custom-font {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    /* Replace with your desired weight */
+    font-style: normal;
+  }
+}

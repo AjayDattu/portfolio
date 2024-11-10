@@ -5,6 +5,7 @@ import React from 'react';
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { FlipWords } from '@/components/ui/flip-words';
 import { SmoothScrollHero } from '@/components/ui/Skills';
+import Spline from '@splinetool/react-spline/next';
 
 function Page() {
   const words = ["Frontend Developer", "Coder", "Youtuber", "Designer"];
@@ -23,7 +24,6 @@ function Page() {
       <div className='mt-40'>
       <SmoothScrollHero/>
       </div>
-      
     </div>
   );
 }
