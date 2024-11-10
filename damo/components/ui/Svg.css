@@ -1,10 +1,10 @@
 svg path {
     fill: transparent;
     stroke: #fff;
-    stroke-width: 0.1;
+    stroke-width: 1;
     stroke-dasharray: 50;
-    stroke-dashoffset: 5s0;
-    animation: textAnimation 4s ease-in-out 1 forwards;
+    stroke-dashoffset: 50;
+    animation: textAnimation 6s ease-in-out 1 forwards;
 }
 
 @keyframes textAnimation {
