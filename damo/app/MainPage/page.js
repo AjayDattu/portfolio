@@ -6,11 +6,13 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 import { FlipWords } from '@/components/ui/flip-words';
 import { SmoothScrollHero } from '@/components/ui/Skills';
 import Spline from '@splinetool/react-spline/next';
+import CustomCursor from '@/components/ui/CustomCursor';
 
 function Page() {
   const words = ["Frontend Developer", "Coder", "Youtuber", "Designer"];
   return (
     <div className="bg-black h-full flex flex-col items-center justify-center ">
+      <CustomCursor/>
       <BackgroundBeamsWithCollision className="flex flex-col gap-6 text-left items-center px-4">
         <Svg />
         <div className="w-full flex flex-col px-[400px] sm:flex-row items-center sm:items-start text-red-500 gap-3 sm:gap-6 md:gap-9 ">
