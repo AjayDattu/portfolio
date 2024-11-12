@@ -1,7 +1,5 @@
 import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import React from 'react';
-import Image from 'next/image';
-import { BackgroundLines } from '@/components/ui/background-lines';
 
 const TitleComponent = () => (
   <h1 className="text-4xl font-semibold text-white dark:text-white">
@@ -14,13 +12,15 @@ const TitleComponent = () => (
 
 const RenderContainerScroll = () => (
   <ContainerScroll titleComponent={<TitleComponent />}>
-    <Image
-      src="/linear.webp"
-      alt="hero"
-      height={720}
-      width={1400}
+    <video
+      src="https://youtu.be/wXXnNb2qJ_Q?si=HrZcGnNYmftLYOCl" // Sample video URL
+      autoPlay
+      loop
+      muted
+      preload="auto"
       className="mx-auto rounded-2xl object-cover h-full object-left-top"
       draggable={false}
+      controls={false}
     />
   </ContainerScroll>
 );
@@ -28,19 +28,15 @@ const RenderContainerScroll = () => (
 function Page() {
   return (
     <div className='bg-black flex flex-col h-full gap-8'>
-     
        <div> 
-       <RenderContainerScroll />
-      </div> 
+         <RenderContainerScroll />
+       </div> 
        <div> 
-       <RenderContainerScroll />
-      </div>
-       
+         <RenderContainerScroll />
+       </div>
        <div> 
-       <RenderContainerScroll />
-      </div>
-
-      
+         <RenderContainerScroll />
+       </div>
     </div>
   );
 }

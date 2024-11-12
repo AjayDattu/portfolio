@@ -28,7 +28,7 @@ export default function Home() {
     //     </div>
        
     // </div>
-     <main className={styles.main}>
+    <main className={`${styles.main} font-sans`}>
        <div className="fixed">
             {/* Lottie iframe embedded animation with responsive width */}
             <iframe
