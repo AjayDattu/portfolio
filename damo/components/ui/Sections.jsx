@@ -5,7 +5,14 @@ import { EvervaultCard } from "./evervault-card";
 import HoverImage from "./Hoverme";
 import { TextGenerateEffect } from "./text-generate-effect";
 import { WavyBackground } from "./wavy-background";
-
+import "./Section.css"
+import BoxReveal from "./box-reveal";
+import TextRevealByWord from "./text-reveal";
+import Particles from "./particles";
+import GradualSpacing from "./gradual-spacing";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import { useEffect } from "react";
 const sections = [
   { id: 1, title: "Section 1", bgColor: "bg-red-500" },
   { id: 2, title: "Section 2", bgColor: "bg-green-500" },
@@ -14,38 +21,75 @@ const sections = [
 ];
 
 const Sections = () => {
-const words = "I am developer from India. Curious to know more? Scroll down and join me on this journey of creativity and code!";
+   useEffect(() => {
+    AOS.init({
+      duration: 2000
+    });
+  }, []);
   return (
-    <div className="overflow-hidden">
-         <WavyBackground className="max-w-4xl mx-auto pb-40">
-            <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
-                Developer from India
-            </p>
-            <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
-                Leverage the power of canvas to create a beautiful hero section
-            </p>
-        </WavyBackground>
-        <section
-          className={` h-screen flex items-center`}
+    // <div className="overflow-hidden">
+        
+        
+    //     <section
+    //       className={` h-screen flex items-center`}
+    //     >
+    //     <div className="z-10 flex min-h-64 w-full items-center justify-center rounded-lg border bg-white dark:bg-black">
+    //       <TextRevealByWord text="Magic UI will change the way you design." />
+    //     </div>
+    //     </section>
+    //     <section
+    //       className={` h-screen flex items-center`}
+    //     >
+    //       <h1 className="text-white text-4xl"></h1>
+    //     </section>
+    //      <section
+    //       className={` h-screen flex items-center`}
+    //     >
+    //       <h1 className="text-white text-4xl"></h1>
+    //     </section>
+    // </div>
+    // components/Sections.js
+    <div>
+    <section
+          className="relative h-screen flex items-center w-screen VV"
         >
-         
-        </section>
-        <section
-          className={` h-screen flex items-center`}
-        >
-          <DragCards/>
-        </section>
-        <section
-          className={` h-screen flex items-center`}
-        >
-          <h1 className="text-white text-4xl"></h1>
+         <iframe className="absolute right-0 top-0 w-[900px] h-[900px]" data-aos="fade-in" src="https://lottie.host/embed/28b481fe-a33e-42d0-bae4-57593b456d0d/rU3AlLfT4M.json"></iframe>
+         <div className="absolute left-10 bottom-28 flex flex-col">
+            <div className="text-[#fff] text-1xl font-bold">
+              <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+                  <p className="text-xl font-semibold">
+                    Scroll Down to Know me<span className="text-[#5046e6]">.</span>
+                  </p>
+              </BoxReveal>
+            </div>
+            <div className="text-[#455CE9] text-4xl font-bold">
+               <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+                  <p className="text-5xl font-semibold">
+                    Indian Developer<span className="text-[#5046e6]">.</span>
+                  </p>
+              </BoxReveal>
+            </div>
+         </div>
         </section>
          <section
-          className={` h-screen flex items-center`}
+          className=" h-screen flex items-center w-screen text-center"
         >
-          <h1 className="text-white text-4xl"></h1>
+              <div className="text-white text-[300px] w-full text-[yellow]" data-aos="zoom-in">Education</div>
+        </section>
+        <section className=" flex min-h-64 items-center justify-center rounded-lg dark:bg-black font-mono"  >
+          <TextRevealByWord text="I began my journey as a Computer Science student at AANM & VVRSR Polytechnic in Gudlavalleru in July 2019. This was where my passion for technology truly took root, and with each project and lesson, my interest in the field kept growing stronger." />
+        </section>
+        <section className="flex min-h-64 items-center justify-center rounded-lg dark:bg-black font-mono">
+          <TextRevealByWord text="With a deepening enthusiasm for Computer Science, I decided to take my studies further by joining SRKR Engineering College in Bhimavaram. Here, as an engineering student, I’ve been able to dive even deeper into the world of technology, gaining new skills and exploring exciting opportunities in the field." />
+        </section>
+        <section className=" flex h-screen items-center justify-center rounded-lg dark:bg-black font-mono">
+          
+        </section>
+        <section className="flex h-screen items-center justify-center rounded-lg dark:bg-black font-mono">
+          
         </section>
     </div>
+  
   );
 };
 

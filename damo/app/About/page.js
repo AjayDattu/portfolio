@@ -48,7 +48,7 @@ const Page = () => {
 
   useEffect(() => {
     // Change the background color based on the current section
-    const colors = ["bg-black", "bg-black", "bg-[#2E236C]", "bg-[#2E236C]","#000"];
+    const colors = ["bg-black", "bg-[#000]", "bg-[#000]", "bg-[#000]","bg-[#2E236C]","bg-[#2E236C]"];
     document.body.className = `transition-colors duration-500 ease-in-out ${colors[currentSection]}`;
   }, [currentSection]);
 

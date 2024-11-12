@@ -7,7 +7,8 @@ import { FlipWords } from '@/components/ui/flip-words';
 import { SmoothScrollHero } from '@/components/ui/Skills';
 import Spline from '@splinetool/react-spline/next';
 import CustomCursor from '@/components/ui/CustomCursor';
-
+import "@/components/"
+import { DragCards } from '@/components/ui/DragCards';
 function Page() {
   const words = ["Frontend Developer", "Coder", "Youtuber", "Designer"];
   return (
@@ -23,8 +24,11 @@ function Page() {
           />
         </div>
       </BackgroundBeamsWithCollision>
-      <div className='mt-40'>
+      <div className='w-full'>
       <SmoothScrollHero/>
+      </div>
+      <div className='w-full'>
+        <DragCards/>
       </div>
     </div>
   );

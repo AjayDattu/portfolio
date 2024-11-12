@@ -2,38 +2,32 @@ import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
 
-export const HoverImageLinks = () => {
+export const HoverImageLinks2 = () => {
   return (
     <section className="bg-neutral-950 p-4 md:p-8">
       <div className="mx-auto max-w-5xl">
         <Link
-          heading="Frontend"
+          heading="SIH Finalist"
           subheading="React.js,Next.js,Tailwind css,scss,Redux"
           imgSrc="/imgs/random/11.jpg"
           href="#"
         />
         <Link
-          heading="Backend"
+          heading="Prajwalam Hackthon"
           subheading="MongoDB,Nodejs,Express js,SQl"
           imgSrc="/imgs/random/6.jpg"
           href="#"
         />
         <Link
-          heading="Libraies"
+          heading="Ecet"
           subheading="GSAP,Shadecn,Ant Design,Material UI,Chakra UI"
           imgSrc="/imgs/random/4.jpg"
           href="#"
         />
         <Link
-          heading="DSA"
+          heading="Leetcode"
           subheading="Tress,Arrays,Graphs,Linklist,Stacks"
           imgSrc="/imgs/random/5.jpg"
-          href="#"
-        />
-        <Link
-          heading="Intersts"
-          subheading="Reading Books,Space,Sci-fi,triller Movies"
-          imgSrc="/imgs/random/10.jpg"
           href="#"
         />
       </div>

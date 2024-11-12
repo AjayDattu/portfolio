@@ -10,6 +10,7 @@ import { SiSpacex } from "react-icons/si";
 import { FiArrowRight, FiMapPin } from "react-icons/fi";
 import { useRef } from "react";
 import { HoverImageLinks } from "./Skillset";
+import { HoverImageLinks2 } from "./Skillset2";
 
 export const SmoothScrollHero = () => {
   return (
@@ -95,7 +96,7 @@ const ParallaxImages = () => {
   return (
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
       <ParallaxImg
-        src=""
+        src="null"
         alt="And example of a space launch"
         start={-200}
         end={200}
@@ -166,6 +167,16 @@ const Schedule = () => {
         Skills & Intersts
       </motion.h1>
       <HoverImageLinks/>
+      <div className="h-10"></div>
+       <motion.h1
+        initial={{ y: 48, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.75 }}
+        className="mb-20 text-4xl font-black uppercase text-zinc-50"
+      >
+       Achivements
+      </motion.h1>
+      <HoverImageLinks2/>
     </section>
   );
 };
