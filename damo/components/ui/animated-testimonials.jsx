@@ -1,152 +1,163 @@
-"use client";;
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+"use client";
 
-export const AnimatedTestimonials = ({
-  testimonials,
-  autoplay = false
-}) => {
-  const [active, setActive] = useState(0);
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-  const handleNext = () => {
-    setActive((prev) => (prev + 1) % testimonials.length);
-  };
+import { cn } from "@/lib/utils";
 
-  const handlePrev = () => {
-    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+export function TimelineItem({
+  event,
+  isActive,
+  isLast,
+  onHover,
+  index,
+  activeIndex,
+  styles,
+  customRender,
+}) {
+  const fillDelay = activeIndex !== null ? Math.max(0, (index - 1) * 0.1) : 0;
+  const fillDuration = activeIndex !== null ? Math.max(0.2, 0.5 - index * 0.1) : 0.5;
 
-  const isActive = (index) => {
-    return index === active;
-  };
-
-  useEffect(() => {
-    if (autoplay) {
-      const interval = setInterval(handleNext, 5000);
-      return () => clearInterval(interval);
-    }
-  }, [autoplay]);
-
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
-  };
   return (
-    (<div
-      className="max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20">
-      <div className="relative grid grid-cols-1 md:grid-cols-2  gap-20">
-        <div>
-          <div className="relative h-80 w-full">
-            <AnimatePresence>
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={testimonial.src}
-                  initial={{
-                    opacity: 0,
-                    scale: 0.9,
-                    z: -100,
-                    rotate: randomRotateY(),
-                  }}
-                  animate={{
-                    opacity: isActive(index) ? 1 : 0.7,
-                    scale: isActive(index) ? 1 : 0.95,
-                    z: isActive(index) ? 0 : -100,
-                    rotate: isActive(index) ? 0 : randomRotateY(),
-                    zIndex: isActive(index)
-                      ? 999
-                      : testimonials.length + 2 - index,
-                    y: isActive(index) ? [0, -80, 0] : 0,
-                  }}
-                  exit={{
-                    opacity: 0,
-                    scale: 0.9,
-                    z: 100,
-                    rotate: randomRotateY(),
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute inset-0 origin-bottom">
-                  <Image
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    width={500}
-                    height={500}
-                    draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center" />
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </div>
-        </div>
-        <div className="flex justify-between flex-col py-4">
+    <motion.div
+      className="flex last:mb-0"
+      onHoverStart={() => onHover(index)}
+      onHoverEnd={() => onHover(null)}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="relative mr-4 flex flex-col items-center">
+        <div
+          className={`absolute ${isLast ? "hidden" : "block"} bottom-0 top-0 w-1`}
+          style={{ backgroundColor: styles.lineColor }}
+        >
           <motion.div
-            key={active}
-            initial={{
-              y: 20,
-              opacity: 0,
-            }}
-            animate={{
-              y: 0,
-              opacity: 1,
-            }}
-            exit={{
-              y: -20,
-              opacity: 0,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: "easeInOut",
-            }}>
-            <h3 className="text-2xl font-bold text-white">
-              {testimonials[active].name}
-            </h3>
-            <p className="text-sm text-neutral-500">
-              {testimonials[active].designation}
-            </p>
-            <motion.p className="text-lg text-neutral-300">
-              {testimonials[active].quote.split(" ").map((word, index) => (
-                <motion.span
-                  key={index}
-                  initial={{
-                    filter: "blur(10px)",
-                    opacity: 0,
-                    y: 5,
-                  }}
-                  animate={{
-                    filter: "blur(0px)",
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.2,
-                    ease: "easeInOut",
-                    delay: 0.02 * index,
-                  }}
-                  className="inline-block">
-                  {word}&nbsp;
-                </motion.span>
-              ))}
-            </motion.p>
-          </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
-            <button
-              onClick={handlePrev}
-              className="h-7 w-7 rounded-full bg-neutral-800 flex items-center justify-center group/button">
-              <IconArrowLeft
-                className="h-5 w-5 text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="h-7 w-7 rounded-full bg-neutral-800 flex items-center justify-center group/button">
-              <IconArrowRight
-                className="h-5 w-5 text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
-            </button>
-          </div>
+            className="w-full origin-top"
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: isActive ? 1 : 0 }}
+            transition={{ duration: fillDuration, delay: fillDelay }}
+            style={{ height: "100%", backgroundColor: styles.activeLineColor }}
+          />
         </div>
+        <motion.div
+          className="relative z-10 rounded-full border-4"
+          style={{
+            width: styles.dotSize,
+            height: styles.dotSize,
+            borderColor: isActive ? styles.activeDotColor : styles.dotColor,
+            backgroundColor: isActive ? styles.activeDotColor : "Background",
+          }}
+          animate={{
+            scale: isActive ? 1.2 : 1,
+            backgroundColor: isActive ? styles.activeDotColor : "Background",
+            borderColor: isActive ? styles.activeDotColor : styles.dotColor,
+          }}
+          transition={{ duration: fillDuration, delay: fillDelay }}
+        />
       </div>
-    </div>)
+      <div className={cn("flex-grow leading-5", !isLast && "mb-3")}>
+        {customRender ? (
+          customRender(event)
+        ) : (
+          <>
+            <h3 className="text-lg font-semibold" style={{ color: styles.titleColor }}>
+              {event.title}
+            </h3>
+            <p style={{ color: styles.descriptionColor }}>{event.description}</p>
+            <span className="text-sm" style={{ color: styles.dateColor }}>
+              {event.date}
+            </span>
+          </>
+        )}
+      </div>
+    </motion.div>
   );
+}
+
+export function AnimatedTimeline({
+  events,
+  className = "",
+  styles: customStyles = {},
+  customEventRender,
+  onEventHover,
+  onEventClick,
+  initialActiveIndex,
+}) {
+  const [activeIndex, setActiveIndex] = useState(initialActiveIndex ?? null);
+  const styles = { ...defaultStyles, ...customStyles };
+
+  const handleHover = (index) => {
+    setActiveIndex(index);
+    onEventHover?.(index !== null ? events[index] : null);
+  };
+
+  return (
+    <div className={`relative py-4 ${className}`}>
+      {events.map((event, index) => (
+        <div key={event.id} onClick={() => onEventClick?.(event)}>
+          <TimelineItem
+            event={event}
+            isActive={activeIndex !== null && index <= activeIndex}
+            isFirst={index === 0}
+            isLast={index === events.length - 1}
+            onHover={handleHover}
+            index={index}
+            activeIndex={activeIndex}
+            styles={styles}
+            customRender={customEventRender}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+const defaultStyles = {
+  lineColor: "#d1d5db",
+  activeLineColor: "#22c55e",
+  dotColor: "#d1d5db",
+  activeDotColor: "#22c55e",
+  dotSize: "1.5rem",
+  titleColor: "inherit",
+  descriptionColor: "inherit",
+  dateColor: "inherit",
 };
+
+export default function AnimatedTimelinePage({
+  events,
+  title,
+  containerClassName,
+  timelineStyles,
+  customEventRender,
+  onEventHover,
+  onEventClick,
+  initialActiveIndex,
+}) {
+  const DefaultEvents = [
+    { id: "1", title: "Event 1", description: "Description 1", date: "2023-01-01" },
+    { id: "2", title: "Event 2", description: "Description 2", date: "2023-02-01" },
+    { id: "3", title: "Event 3", description: "Description 3", date: "2023-03-01" },
+  ];
+  const defaultTitle = "Timeline";
+
+  return (
+    <div
+      className={cn(
+        "container mx-auto rounded-lg bg-background px-8 pt-6 text-foreground",
+        containerClassName,
+      )}
+    >
+      <h1 className="text-2xl font-bold">{title || defaultTitle}</h1>
+      <AnimatedTimeline
+        events={events || DefaultEvents}
+        className="max-w-2xl"
+        styles={timelineStyles}
+        customEventRender={customEventRender}
+        onEventHover={onEventHover}
+        onEventClick={onEventClick}
+        initialActiveIndex={initialActiveIndex}
+      />
+    </div>
+  );
+}
