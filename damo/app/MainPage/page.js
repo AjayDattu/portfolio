@@ -10,6 +10,9 @@ import CustomCursor from '@/components/ui/CustomCursor';
 import "./style.css"
 import { DragCards } from '@/components/ui/DragCards';
 import { TimelineDemo } from '@/components/ui/Interships';
+import { VelocityText } from './Bento';
+import TextRevealByWord from '@/components/ui/text-reveal';
+import { AnimatedTestimonialsDemo } from '@/components/ui/WorkExperience';
 function Page() {
   const words = ["Frontend Developer", "Coder", "Youtuber", "Designer"];
   return (
@@ -27,9 +30,11 @@ function Page() {
       </BackgroundBeamsWithCollision>
       <div className='w-full font-sans'>
       <SmoothScrollHero/>
+      <VelocityText/>
       </div>
-      <div className='w-full'>
-        <DragCards/>
+       
+      <div className='h-screen justify-center items-center  p-10'>
+        <AnimatedTestimonialsDemo/>
       </div>
     </div>
   );

@@ -1,7 +1,9 @@
+
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "../components/header"
 import Cursor from "@/components/ui/CustomCursor";
+import FloatingNavbar from "./FloatingNavbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
