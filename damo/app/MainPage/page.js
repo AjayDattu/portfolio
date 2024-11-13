@@ -1,7 +1,7 @@
 "use client";
 import MainText from '@/components/MainText';
 import Svg from '@/components/ui/Svg';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { FlipWords } from '@/components/ui/flip-words';
 import { SmoothScrollHero } from '@/components/ui/Skills';
@@ -12,9 +12,16 @@ import { DragCards } from '@/components/ui/DragCards';
 import { TimelineDemo } from '@/components/ui/Interships';
 import { VelocityText } from './Bento';
 import TextRevealByWord from '@/components/ui/text-reveal';
-import { AnimatedTestimonialsDemo, StickyScrollRevealDemo } from '@/components/ui/WorkExperience';
+import VerticalTimelineComponent, { AnimatedTestimonialsDemo, StickyScrollRevealDemo } from '@/components/ui/WorkExperience';
 import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 function Page() {
+   useEffect(() => {
+    AOS.init({
+      duration: 2000
+    });
+  }, []);
   const words = ["Frontend Developer", "Coder", "Youtuber", "Designer"];
   const content = [
   {
@@ -81,9 +88,10 @@ function Page() {
       </BackgroundBeamsWithCollision>
       <div className='w-full font-sans'>
       <SmoothScrollHero/>
+      <div className='text-7xl text-white text-center italic' data-aos="zoom-in" id='h'>Acheivements</div>
       <VelocityText/>
       </div>
-       <StickyScroll/>
+        <VerticalTimelineComponent/>
     </div>
   );
 }

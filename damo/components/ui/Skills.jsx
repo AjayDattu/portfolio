@@ -11,7 +11,7 @@ import { FiArrowRight, FiMapPin } from "react-icons/fi";
 import { useRef } from "react";
 import { HoverImageLinks } from "./Skillset";
 import { HoverImageLinks2 } from "./Skillset2";
-
+import "./style.css"
 export const SmoothScrollHero = () => {
   return (
     <div className="bg-zinc-950 pt-80">
@@ -164,7 +164,7 @@ const Schedule = () => {
         transition={{ ease: "easeInOut", duration: 0.75 }}
         className="mb-20 text-4xl font-black uppercase text-zinc-50"
       >
-        Skills & Intersts
+       <div data-aos="zoom-in" id='h'>SKILLS & INTERSTS</div>
       </motion.h1>
       <HoverImageLinks/>
        

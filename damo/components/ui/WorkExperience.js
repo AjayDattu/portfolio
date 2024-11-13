@@ -1,62 +1,99 @@
-"use client";
-import React from "react";
+// components/VerticalTimelineComponent.js
 
-import Image from "next/image";
-import { StickyScroll } from "./sticky-scroll-reveal";
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import WorkIcon from '@mui/icons-material/Work'; // Ensure you have Material UI installed
+import SchoolIcon from '@mui/icons-material/School';
+import StarIcon from '@mui/icons-material/Star';
 
-
-const content = [
-  {
-    title: "Collaborative Editing",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div
-        className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Collaborative Editing
-      </div>
-    ),
-  },
-  {
-    title: "Real time changes",
-    description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-    content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
-          src="/linear.webp"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover"
-          alt="linear board demo" />
-      </div>
-    ),
-  },
-  {
-    title: "Version control",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div
-        className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Version control
-      </div>
-    ),
-  },
-  {
-    title: "Running out of content",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div
-        className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
-      </div>
-    ),
-  },
-];
-export function StickyScrollRevealDemo() {
+const VerticalTimelineComponent = () => {
   return (
-    (<StickyScroll content={content} />)
+    <VerticalTimeline>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={{ background: '#1e1e1e', color: '#fff' }}
+        contentArrowStyle={{ borderRight: '7px solid #1e1e1e' }}
+        date="2011 - present"
+        iconStyle={{ background: '#1e1e1e', color: '#fff' }}
+        icon={<WorkIcon />}
+      >
+        <h3 className="vertical-timeline-element-title">Creative Director</h3>
+        <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+        <p>Creative Direction, User Experience, Visual Design, Project Management, Team Leading</p>
+      </VerticalTimelineElement>
+
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        date="2010 - 2011"
+        iconStyle={{ background: '#1e1e1e', color: '#fff' }}
+        icon={<WorkIcon />}
+      >
+        <h3 className="vertical-timeline-element-title">Art Director</h3>
+        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+        <p>Creative Direction, User Experience, Visual Design, SEO, Online Marketing</p>
+      </VerticalTimelineElement>
+
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        date="2008 - 2010"
+        iconStyle={{ background: '#1e1e1e', color: '#fff' }}
+        icon={<WorkIcon />}
+      >
+        <h3 className="vertical-timeline-element-title">Web Designer</h3>
+        <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
+        <p>User Experience, Visual Design</p>
+      </VerticalTimelineElement>
+
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        date="2006 - 2008"
+        iconStyle={{ background: '#1e1e1e', color: '#fff' }}
+        icon={<WorkIcon />}
+      >
+        <h3 className="vertical-timeline-element-title">Web Designer</h3>
+        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+        <p>User Experience, Visual Design</p>
+      </VerticalTimelineElement>
+
+      <VerticalTimelineElement
+        className="vertical-timeline-element--education"
+        date="April 2013"
+        iconStyle={{ background: '#ff4081', color: '#fff' }}
+        icon={<SchoolIcon />}
+      >
+        <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
+        <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
+        <p>Strategy, Social Media</p>
+      </VerticalTimelineElement>
+
+      <VerticalTimelineElement
+        className="vertical-timeline-element--education"
+        date="November 2012"
+        iconStyle={{ background: '#ff4081', color: '#fff' }}
+        icon={<SchoolIcon />}
+      >
+        <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
+        <h4 className="vertical-timeline-element-subtitle">Certification</h4>
+        <p>Creative Direction, User Experience, Visual Design</p>
+      </VerticalTimelineElement>
+
+      <VerticalTimelineElement
+        className="vertical-timeline-element--education"
+        date="2002 - 2006"
+        iconStyle={{ background: '#ff4081', color: '#fff' }}
+        icon={<SchoolIcon />}
+      >
+        <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
+        <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+        <p>Creative Direction, Visual Design</p>
+      </VerticalTimelineElement>
+
+      <VerticalTimelineElement
+        iconStyle={{ background: '#16c172', color: '#fff' }}
+        icon={<StarIcon />}
+      />
+    </VerticalTimeline>
   );
-}
+};
+
+export default VerticalTimelineComponent;
