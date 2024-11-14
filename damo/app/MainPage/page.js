@@ -74,15 +74,15 @@ function Page() {
   },
 ];
   return (
-    <div className="bg-black h-full flex flex-col items-center justify-center ">
+    <div className="bg-black h-full flex flex-col items-center justify-center " data-aos="fade-in">
       <CustomCursor/>
       <BackgroundBeamsWithCollision className="flex flex-col gap-6 text-left items-center px-4">
         <Svg />
         <div className="w-full flex flex-col px-[400px] sm:flex-row items-center sm:items-start text-red-500 gap-3 sm:gap-6 md:gap-9" id='h'>
-          <span className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl">a</span>
+          <span className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl">a</span>
           <FlipWords 
             words={words} 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold "
           />
         </div>
       </BackgroundBeamsWithCollision>

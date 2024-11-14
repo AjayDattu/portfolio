@@ -49,11 +49,11 @@ const Sections = () => {
     //     </section>
     // </div>
     // components/Sections.js
-    <div>
+    <div data-aos="zoom-in">
     <section
-          className="relative h-screen flex items-center w-screen VV"
+          className="relative h-screen flex items-center w-screen"
         >
-         <iframe className="absolute right-0 top-0 w-[900px] h-[900px]" data-aos="fade-in" src="https://lottie.host/embed/28b481fe-a33e-42d0-bae4-57593b456d0d/rU3AlLfT4M.json"></iframe>
+         <iframe className="absolute right-0 top-0 w-[900px] h-[900px]" src="https://lottie.host/embed/28b481fe-a33e-42d0-bae4-57593b456d0d/rU3AlLfT4M.json"></iframe>
          <div className="absolute left-10 bottom-28 flex flex-col">
             <div className="text-[#fff] text-1xl font-bold">
               <BoxReveal boxColor={"#5046e6"} duration={0.5}>
@@ -64,7 +64,7 @@ const Sections = () => {
             </div>
             <div className="text-[#455CE9] text-4xl font-bold">
                <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-                  <p className="text-5xl font-semibold">
+                  <p className="text-5xl font-semibold" id="h">
                     Indian Developer<span className="text-[#5046e6]">.</span>
                   </p>
               </BoxReveal>
@@ -74,10 +74,10 @@ const Sections = () => {
          <section
           className=" h-screen flex items-center w-screen text-center"
         >
-              <div className="text-white text-[300px] w-full text-[yellow]" data-aos="zoom-in">Education</div>
+              <div className=" text-[300px] w-full text-[yellow]" data-aos="zoom-in" id="h">Education</div>
         </section>
         <section className=" flex min-h-64 items-center justify-center rounded-lg dark:bg-black font-mono"  >
-          <TextRevealByWord text="I began my journey as a Computer Science student at AANM & VVRSR Polytechnic in Gudlavalleru in July 2019. This was where my passion for technology truly took root, and with each project and lesson, my interest in the field kept growing stronger." />
+          
         </section>
         <section className="flex min-h-64 items-center justify-center rounded-lg dark:bg-black font-mono">
           <TextRevealByWord text="With a deepening enthusiasm for Computer Science, I decided to take my studies further by joining SRKR Engineering College in Bhimavaram. Here, as an engineering student, I’ve been able to dive even deeper into the world of technology, gaining new skills and exploring exciting opportunities in the field." />
