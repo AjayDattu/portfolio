@@ -65,7 +65,7 @@ const Sections = () => {
             <div className="text-[#455CE9] text-4xl font-bold">
                <BoxReveal boxColor={"#5046e6"} duration={0.5}>
                   <p className="text-5xl font-semibold" id="h">
-                   Every Call me Damu<span className="text-[#5046e6]">.</span>
+                   Everyone Call me Damu<span className="text-[#5046e6]">.</span>
                   </p>
               </BoxReveal>
             </div>
