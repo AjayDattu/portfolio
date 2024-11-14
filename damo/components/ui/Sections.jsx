@@ -58,29 +58,36 @@ const Sections = () => {
             <div className="text-[#fff] text-1xl font-bold">
               <BoxReveal boxColor={"#5046e6"} duration={0.5}>
                   <p className="text-xl font-semibold">
-                    Scroll Down to Know me<span className="text-[#5046e6]">.</span>
+                    I am from India<span className="text-[#5046e6]">.</span>
                   </p>
               </BoxReveal>
             </div>
             <div className="text-[#455CE9] text-4xl font-bold">
                <BoxReveal boxColor={"#5046e6"} duration={0.5}>
                   <p className="text-5xl font-semibold" id="h">
-                    Indian Developer<span className="text-[#5046e6]">.</span>
+                   Every Call me Damu<span className="text-[#5046e6]">.</span>
                   </p>
               </BoxReveal>
             </div>
          </div>
         </section>
          <section
-          className=" h-screen flex items-center w-screen text-center"
+          className="h-screen flex items-center w-screen text-center"
         >
               <div className=" text-[300px] w-full text-[yellow]" data-aos="zoom-in" id="h">Education</div>
         </section>
-        <section className=" flex min-h-64 items-center justify-center rounded-lg dark:bg-black font-mono"  >
-          
+        <section className=" flex h-screen items-center justify-center items-center rounded-lg dark:bg-black font-mono"  >
+         <div className="flex flex-col text-white h-full w-full">
+            <h1 className="text-5xl" id="e">
+            B.tech in Computer Science
+            </h1>
+            <h2 className="text-8xl" id="e">
+              SRKR Engineering college
+            </h2>
+          </div>
         </section>
         <section className="flex min-h-64 items-center justify-center rounded-lg dark:bg-black font-mono">
-          <TextRevealByWord text="With a deepening enthusiasm for Computer Science, I decided to take my studies further by joining SRKR Engineering College in Bhimavaram. Here, as an engineering student, I’ve been able to dive even deeper into the world of technology, gaining new skills and exploring exciting opportunities in the field." />
+            
         </section>
         <section className=" flex h-screen items-center justify-center rounded-lg dark:bg-black font-mono">
           

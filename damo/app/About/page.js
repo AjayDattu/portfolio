@@ -1,62 +1,90 @@
-// import React from 'react'
-// import Spline from '@splinetool/react-spline/next';
-// import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
-// import AboutMe from '@/components/ui/AboutQues';
-
-// function page() {
-//     const words = 'hello,This is Ajay,I am from India Here youll find me here scroll to know more'
-//   return (
-//     <div className='bg-black flex flex-col'>
-//       <div className='justify-start w-full h-screen p-20 pt-60 flex flex-row'>
-        
-//         <div className='relative z-10'><TextGenerateEffect words={words} /></div>
-//           <div className='absolute top-2'>
-//       </div>
-//       </div>
-//       <div className='h-screen bg-white'></div>
-//     </div>
-//   )
-// }
-
-// export default page
-// components/ScrollAnimation.js
-"use client";
-import Sections from "@/components/ui/Sections";
 // pages/index.js
+'use client'
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import BoxReveal from '@/components/ui/box-reveal';
+import './about.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+gsap.registerPlugin(ScrollTrigger);
 
-import { useEffect, useState } from "react";
-
-const Page = () => {
-  const [currentSection, setCurrentSection] = useState(0);
-
-  const handleScroll = () => {
-    const sectionElements = document.querySelectorAll("section");
-    sectionElements.forEach((section, index) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top >= 0 && rect.top < window.innerHeight) {
-        setCurrentSection(index);
-      }
-    });
-  };
-
+const ColorSections = () => {
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    AOS.init({
+      duration: 2000
+    });
+  }, []);
+  useEffect(() => {
+    const sections = gsap.utils.toArray('.section');
+
+    sections.forEach((elem) => {
+      const color = elem.getAttribute('data-color');
+
+      ScrollTrigger.create({
+        trigger: elem,
+        start: 'top 5%',
+        end: 'bottom 5%',
+        markers: false,
+        onEnter: () => gsap.to('main', {
+          backgroundColor: color,
+          duration: 1.4,
+        }),
+        onLeave: () => gsap.to('main', {
+          backgroundColor: '#fef9ef',
+          duration: 1.4,
+        }),
+        onLeaveBack: () => gsap.to('main', {
+          backgroundColor: '#fef9ef',
+          duration: 1.4,
+        }),
+        onEnterBack: () => gsap.to('main', {
+          backgroundColor: color,
+          duration: 1.4,
+        }),
+      });
+    });
+
+    // Cleanup ScrollTrigger instances on component unmount
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
-  useEffect(() => {
-    // Change the background color based on the current section
-    const colors = ["bg-black", "bg-[#000]", "bg-[#000]", "bg-[#000]","bg-[#2E236C]","bg-[#2E236C]"];
-    document.body.className = `transition-colors duration-500 ease-in-out ${colors[currentSection]}`;
-  }, [currentSection]);
+  const changeColor = () => {
+    const section = document.getElementById('id');
+    section.setAttribute('data-color', '#000000');
+    console.log('change dark-mode');
+    ScrollTrigger.refresh();
+  };
 
   return (
-    <div>
-      <Sections />
-    </div>
+    <main className="root">
+      <section id="id" data-color="#040D12" className="relative section min-h-screen flex items-center justify-center s-1">
+        <iframe className="absolute right-0 top-0 w-[900px] h-[900px]" src="https://lottie.host/embed/28b481fe-a33e-42d0-bae4-57593b456d0d/rU3AlLfT4M.json"></iframe>
+         <div className="absolute left-10 bottom-28 flex flex-col">
+            <div className="text-[#fff] text-1xl font-bold">
+              <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+                  <p className="text-xl font-semibold">
+                    I am from India<span className="text-[#5046e6]">.</span>
+                  </p>
+              </BoxReveal>
+            </div>
+            <div className="text-[#455CE9] text-4xl font-bold">
+               <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+                  <p className="text-5xl font-semibold" id="h">
+                   Every Call me Damu<span className="text-[#5046e6]">.</span>
+                  </p>
+              </BoxReveal>
+            </div>
+         </div>
+      </section>
+      <section data-color="#000" className="section min-h-screen flex items-center justify-center s-2">
+         <div className=" text-[300px] w-full text-[yellow]" data-aos="zoom-in" id="h">Education</div>
+      </section>
+      <section data-color="#000" className="section min-h-screen flex items-center justify-center s-3">section 3</section>
+    </main>
   );
 };
 
-export default Page;
+export default ColorSections;
