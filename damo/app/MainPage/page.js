@@ -74,7 +74,7 @@ function Page() {
   },
 ];
   return (
-    <div className="bg-black h-full flex flex-col items-center justify-center " data-aos="fade-in">
+    <div className="bg-black h-full flex flex-col items-center justify-center " data-aos="fade-left">
       <CustomCursor/>
       <BackgroundBeamsWithCollision className="flex flex-col gap-6 text-left items-center px-4">
         <Svg />

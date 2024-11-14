@@ -82,7 +82,26 @@ const ColorSections = () => {
       <section data-color="#000" className="section min-h-screen flex items-center justify-center s-2">
          <div className=" text-[300px] w-full text-[yellow]" data-aos="zoom-in" id="h">Education</div>
       </section>
-      <section data-color="#000" className="section min-h-screen flex items-center justify-center s-3">section 3</section>
+      <section data-color="#5046e6" className="section min-h-screen flex items-center justify-center s-3">
+        <div className="flex flex-col text-white h-full w-full justify-center items-center">
+            <h1 className="text-5xl" id="e" data-aos="fade-right">
+            B.tech in Computer Science
+            </h1>
+            <h2 className="text-8xl" id="e" data-aos="fade-left">
+              SRKR Engineering college
+            </h2>
+          </div>
+      </section>
+      <section data-color="#5046" className="section min-h-screen flex items-center justify-center s-4">
+        <div className="flex flex-col text-white h-full w-full justify-center items-center">
+            <h1 className="text-5xl" id="e">
+            B.tech in Computer Science
+            </h1>
+            <h2 className="text-8xl" id="e">
+              SRKR Engineering college
+            </h2>
+          </div>
+      </section>
     </main>
   );
 };
