@@ -1,3 +1,4 @@
+import Particles from "@/components/ui/particles";
 import {
   motion,
   useScroll,
@@ -6,7 +7,6 @@ import {
   useSpring,
 } from "framer-motion";
 import React, { useRef } from "react";
-
 export const VelocityText = () => {
   const targetRef = useRef(null);
 
@@ -32,13 +32,23 @@ export const VelocityText = () => {
       ref={targetRef}
       className="h-[1000vh] bg-neutral-950 text-[yellow]"
     >
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+      <div className="sticky relative top-0 flex h-screen items-center overflow-hidden">
+        
+        
         <motion.p
           style={{ skewX, x }}
           className="origin-bottom-left whitespace-nowrap text-3xl font-black uppercase leading-[0.85] md:text-7xl md:leading-[0.85]"
         >
            SIH'23 Finalist | Prajwala Hackathon Best Impactful Solution | ECET 79th Rank | Solved 500+ Problems on LeetCode
         </motion.p>
+         <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={80}
+        color={"#ffffff"}
+        refresh
+      />
+
       </div>
     </section>
   );

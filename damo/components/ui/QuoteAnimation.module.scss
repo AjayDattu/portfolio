@@ -1,0 +1,11 @@
+// components/QuoteAnimation.module.scss
+.quoteContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // Full viewport height
+    background-color: black; // Background color
+    color: white; // Text color
+    font-size: 3rem; // Font size
+    transition: opacity 1s ease; // Smooth transition for fade out
+}

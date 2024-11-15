@@ -12,9 +12,44 @@ import { useRef } from "react";
 import { HoverImageLinks } from "./Skillset";
 import { HoverImageLinks2 } from "./Skillset2";
 import "./style.css"
+import IconCloud from "./icon-cloud";
+import Particles from "./particles";
+ 
+const slugs = [
+  "typescript",
+  "javascript",
+  "dart",
+  "java",
+  "react",
+  "flutter",
+  "android",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "express",
+  "nextdotjs",
+  "prisma",
+  "amazonaws",
+  "postgresql",
+  "firebase",
+  "nginx",
+  "vercel",
+  "testinglibrary",
+  "jest",
+  "cypress",
+  "docker",
+  "git",
+  "jira",
+  "github",
+  "gitlab",
+  "visualstudiocode",
+  "androidstudio",
+  "sonarqube",
+  "figma",
+];
 export const SmoothScrollHero = () => {
   return (
-    <div className="bg-zinc-950 pt-80">
+    <div className="bg-zinc-950 pt-80 w-full">
       <ReactLenis
         root
         options={{
@@ -48,6 +83,13 @@ const Hero = () => {
       style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }}
       className="relative w-full"
     >
+      <Particles
+        className="absolute inset-0"
+        quantity={500}
+        ease={80}
+        color={"#ffffff"}
+        refresh
+      />
       <CenterImage />
 
       <ParallaxImages />
@@ -96,7 +138,7 @@ const ParallaxImages = () => {
   return (
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
       <ParallaxImg
-        src="null"
+        src="https://res.cloudinary.com/dxxics5nv/image/upload/v1731647134/bodhidarama_s3lvxx.jpg"
         alt="And example of a space launch"
         start={-200}
         end={200}
@@ -110,7 +152,7 @@ const ParallaxImages = () => {
         className="mx-auto w-2/3"
       />
       <ParallaxImg
-        src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://res.cloudinary.com/dxxics5nv/image/upload/v1731647256/blackholw_sqpbv7.jpg"
         alt="Orbiting satellite"
         start={-200}
         end={200}
@@ -156,8 +198,15 @@ const Schedule = () => {
   return (
     <section
       id="launch-schedule"
-      className="mx-auto max-w-5xl px-4 py-48 text-white"
+      className="relative mx-auto px-4 py-48 text-white"
     >
+      <Particles
+        className="absolute inset-0"
+        quantity={500}
+        ease={80}
+        color={"#ffffff"}
+        refresh
+      />
       <motion.h1
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -165,7 +214,9 @@ const Schedule = () => {
         className="mb-20 text-4xl font-black uppercase text-zinc-50"
       >
        <div data-aos="zoom-in" id='h'>SKILLS & INTERSTS</div>
-      </motion.h1>
+      </motion.h1> 
+      <IconCloud iconSlugs={slugs} />
+      
       <HoverImageLinks/>
        
     </section>

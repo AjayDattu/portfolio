@@ -78,6 +78,7 @@ const Sections = () => {
         </section>
         <section className=" flex h-screen items-center justify-center items-center rounded-lg dark:bg-black font-mono"  >
          <div className="flex flex-col text-white h-full w-full">
+           <img src="https://res.cloudinary.com/dxxics5nv/image/upload/v1731584036/srkr_q1edrj.jpg"/>
             <h1 className="text-5xl" id="e">
             B.tech in Computer Science
             </h1>

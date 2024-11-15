@@ -16,6 +16,40 @@ import VerticalTimelineComponent, { AnimatedTestimonialsDemo, StickyScrollReveal
 import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import IconCloud from "@/components/ui/icon-cloud";
+ 
+const slugs = [
+  "typescript",
+  "javascript",
+  "dart",
+  "java",
+  "react",
+  "flutter",
+  "android",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "express",
+  "nextdotjs",
+  "prisma",
+  "amazonaws",
+  "postgresql",
+  "firebase",
+  "nginx",
+  "vercel",
+  "testinglibrary",
+  "jest",
+  "cypress",
+  "docker",
+  "git",
+  "jira",
+  "github",
+  "gitlab",
+  "visualstudiocode",
+  "androidstudio",
+  "sonarqube",
+  "figma",
+];
 function Page() {
    useEffect(() => {
     AOS.init({
@@ -74,7 +108,7 @@ function Page() {
   },
 ];
   return (
-    <div className="bg-black h-full flex flex-col items-center justify-center " data-aos="fade-left">
+    <div className="bg-black h-full flex flex-col items-center justify-center " data-aos="fade-right">
       <CustomCursor/>
       <BackgroundBeamsWithCollision className="flex flex-col gap-6 text-left items-center px-4">
         <Svg />
@@ -89,7 +123,7 @@ function Page() {
       <div className='w-full font-sans'>
       <SmoothScrollHero/>
       <div className='text-7xl text-white text-center italic' data-aos="zoom-in" id='h'>Acheivements</div>
-      <VelocityText/>
+        <VelocityText/>
       </div>
         <VerticalTimelineComponent/>
     </div>
