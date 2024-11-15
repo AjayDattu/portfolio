@@ -68,15 +68,13 @@ const ColorSections = () => {
       <section id="id" data-color="#000" className="relative section min-h-screen flex items-center justify-center s-1">
       <Particles
         className="absolute inset-0"
-        quantity={1500}
+        quantity={1000}
         ease={80}
         color={"#ffffff"}
         refresh
       />
       <Meteors number={4} />
-      <iframe className="absolute right-0 top-0 w-[900px] h-[900px]" src="https://lottie.host/embed/28b481fe-a33e-42d0-bae4-57593b456d0d/rU3AlLfT4M.json"></iframe>
-      
-        
+      <iframe className="absolute right-0 top-0 w-[50%] h-full" src="https://lottie.host/embed/d9d30006-a4b0-4134-84ec-c9ead95d03cb/vEe1dsNi31.json"></iframe>
          <div className="absolute left-10 bottom-28 flex flex-col">
             <div className="text-[#fff] text-1xl font-bold">
               <BoxReveal boxColor={"#5046e6"} duration={0.5}>
@@ -103,7 +101,10 @@ const ColorSections = () => {
         refresh
       />
       <Meteors number={4} />
-         <div className=" text-[300px] w-full text-[yellow]" data-aos="zoom-in" id="h">Education</div>
+         <div className=" text-[300px] w-full text-[yellow]" data-aos="zoom-in" id="h">
+                <iframe className="absolute w-[30%] h-[50%] left-0 top-0" src="https://lottie.host/embed/2b86e896-558c-4255-9f53-16f715871ff8/lqLhvKteyP.json"/> 
+                <div className='md:text-[100px] lg:text-[300px]'>Education</div>
+         </div>
       </section>
      <section data-color="#000" className="relative section h-screen flex items-center justify-center s-3 italic" id='e'>
         <Particles
@@ -113,7 +114,7 @@ const ColorSections = () => {
         color={"#ffffff"}
         refresh
       />
-        <iframe className="absolute w-[30%] h-[50%] left-0 top-0" src="https://lottie.host/embed/eb811b45-ddc8-4eb0-a7a2-a185ad84b070/671l90tNOg.json"></iframe>
+        <iframe className="absolute w-[30%] h-[50%] left-0 top-0" src="https://lottie.host/embed/d97f9e0f-2597-4c14-aea3-e8515f3677ff/1bPvzvC4RV.json"></iframe>
         <div className="flex flex-col text-white h-full w-full justify-center items-center p-8 gap-7">
           <div className="text-5xl flex items-center mb-4 gap-6" data-aos="fade-right">
             <FaGraduationCap className="mr-2 text-6xl" />
@@ -133,7 +134,7 @@ const ColorSections = () => {
       <section data-color="#000" className="relative section h-screen flex items-center justify-center s-4 gpa-10" id='e'>
        <Particles
         className="absolute inset-0"
-        quantity={100}
+        quantity={1000}
         ease={80}
         color={"#ffffff"}
         refresh
