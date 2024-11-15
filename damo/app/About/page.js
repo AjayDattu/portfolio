@@ -74,7 +74,8 @@ const ColorSections = () => {
         refresh
       />
       <Meteors number={4} />
-      <iframe className="absolute w-[30%] h-[50%] left-0 top-0" src="https://lottie.host/embed/eb811b45-ddc8-4eb0-a7a2-a185ad84b070/671l90tNOg.json"></iframe>
+      <iframe className="absolute right-0 top-0 w-[900px] h-[900px]" src="https://lottie.host/embed/28b481fe-a33e-42d0-bae4-57593b456d0d/rU3AlLfT4M.json"></iframe>
+      
         
          <div className="absolute left-10 bottom-28 flex flex-col">
             <div className="text-[#fff] text-1xl font-bold">
@@ -112,7 +113,7 @@ const ColorSections = () => {
         color={"#ffffff"}
         refresh
       />
-        <iframe className="absolute top-10 w-full h-full" src="https://lottie.host/embed/a5688871-357c-4012-b8b5-ca6e080cef6d/HtcTX1wUF8.json"></iframe>
+        <iframe className="absolute w-[30%] h-[50%] left-0 top-0" src="https://lottie.host/embed/eb811b45-ddc8-4eb0-a7a2-a185ad84b070/671l90tNOg.json"></iframe>
         <div className="flex flex-col text-white h-full w-full justify-center items-center p-8 gap-7">
           <div className="text-5xl flex items-center mb-4 gap-6" data-aos="fade-right">
             <FaGraduationCap className="mr-2 text-6xl" />
@@ -137,7 +138,8 @@ const ColorSections = () => {
         color={"#ffffff"}
         refresh
       />
-        <iframe className="absolute right-0 top-0 w-[900px] h-[900px]" src="https://lottie.host/embed/28b481fe-a33e-42d0-bae4-57593b456d0d/rU3AlLfT4M.json"></iframe>
+        <iframe className="absolute top-10 w-full h-full" src="https://lottie.host/embed/a5688871-357c-4012-b8b5-ca6e080cef6d/HtcTX1wUF8.json"></iframe>
+      
         <div className="flex flex-col text-white h-full w-full justify-center items-center p-8 gap-7">
           <div className="text-5xl flex items-center mb-4" data-aos="fade-left">
             <FaGraduationCap className="mr-2 text-6xl" />
