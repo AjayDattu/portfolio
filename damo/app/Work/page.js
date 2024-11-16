@@ -1,19 +1,11 @@
 import { ContainerScroll } from '@/components/ui/container-scroll-animation';
+import SkillsProgressBar from '@/components/ui/DsaSkill';
 import React from 'react';
 
-const TitleComponent = () => (
-  <h1 className="text-4xl font-semibold text-white dark:text-white">
-    Unleash the power of <br />
-    <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-      Scroll Animations
-    </span>
-  </h1>
-);
-
-const RenderContainerScroll = (video) => (
-  <ContainerScroll titleComponent={<TitleComponent />}>
+const RenderContainerScroll = ({ video, titleComponent }) => (
+  <ContainerScroll titleComponent={titleComponent}>
     <video
-      src={video} // Sample video URL
+      src={video} // Valid video URL
       autoPlay
       loop
       muted
@@ -27,16 +19,122 @@ const RenderContainerScroll = (video) => (
 
 function Page() {
   return (
-    <div className='bg-black flex flex-col h-full gap-8'>
-       <div> 
-         <RenderContainerScroll video={"https://www.canva.com/design/DAGWoTB7yGY/dsO7boo0zQ0zlc-56__pog/watch?utm_content=DAGWoTB7yGY&utm_campaign=designshare&utm_medium=link&utm_source=editor"}/>
-       </div> 
-       <div> 
-         <RenderContainerScroll video={"https://www.canva.com/design/DAGWoTB7yGY/dsO7boo0zQ0zlc-56__pog/watch?utm_content=DAGWoTB7yGY&utm_campaign=designshare&utm_medium=link&utm_source=editor"}/>
-       </div>
-       <div> 
-         <RenderContainerScroll video={"https://www.canva.com/design/DAGWoTB7yGY/dsO7boo0zQ0zlc-56__pog/watch?utm_content=DAGWoTB7yGY&utm_campaign=designshare&utm_medium=link&utm_source=editor"}/>
-       </div>
+    <div className="bg-black flex flex-col h-full gap-8">
+      <div>
+        <RenderContainerScroll
+          video="https://res.cloudinary.com/dyny7wc0n/video/upload/v1731751142/Untitled_design_3_emrfn6.mp4"
+          titleComponent={
+            <h1 className="text-4xl font-semibold text-white dark:text-white">
+              Explore <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                 3D Spline, Tailwind, React
+              </span>
+            </h1>
+          }
+        />
+      </div>
+      <div>
+        <RenderContainerScroll
+          video="https://res.cloudinary.com/dyny7wc0n/video/upload/v1731751165/Untitled_design_4_g60jom.mp4"
+          titleComponent={
+            <h1 className="text-4xl font-semibold text-white dark:text-white">
+              Introducing <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                ShopIn An Ecommerce Site
+              </span>
+            </h1>
+          }
+        />
+      </div>
+      <div>
+        <RenderContainerScroll
+          video="https://res.cloudinary.com/dyny7wc0n/video/upload/v1731750106/xbrmgcrdbzucxcatqd3l.mp4"
+          titleComponent={
+            <h1 className="text-4xl font-semibold text-white dark:text-white">
+              Innovative <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                Team-Pad - A File share Application without logins
+              </span>
+            </h1>
+          }
+        />
+      </div>
+      <div>
+        <RenderContainerScroll
+          video="https://res.cloudinary.com/dyny7wc0n/video/upload/v1731752164/Untitled_design_6_ihgzn9.mp4"
+          titleComponent={
+            <h1 className="text-4xl font-semibold text-white dark:text-white">
+              Unleash <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                Visual Designs-Piclingo Transulation
+              </span>
+            </h1>
+          }
+        />
+      </div>
+      <div>
+        <RenderContainerScroll
+          video="https://res.cloudinary.com/dyny7wc0n/video/upload/v1731753485/Untitled_design_8_rlsds3.mp4"
+          titleComponent={
+            <h1 className="text-4xl font-semibold text-white dark:text-white">
+              Showcase <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                Interactive Designs
+              </span>
+            </h1>
+          }
+        />
+      </div>
+      <div>
+        <RenderContainerScroll
+          video="https://res.cloudinary.com/dyny7wc0n/video/upload/v1731753490/Untitled_design_9_npsrzp.mp4"
+          titleComponent={
+            <h1 className="text-4xl font-semibold text-white dark:text-white">
+              Empower <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                Functionality - Notes App
+              </span>
+            </h1>
+          }
+        />
+      </div>
+      <div>
+        <RenderContainerScroll
+          video="https://res.cloudinary.com/dyny7wc0n/video/upload/v1731750787/Untitled_design_2_dyhlx9.mp4"
+          titleComponent={
+            <h1 className="text-4xl font-semibold text-white dark:text-white">
+              Dive into <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                Cutting-Edge Tech Dashboard with Nextjs
+              </span>
+            </h1>
+          }
+        />
+      </div>
+      <div>
+        <RenderContainerScroll
+          video="https://res.cloudinary.com/dyny7wc0n/video/upload/v1731751734/Untitled_design_5_ghfevt.mp4"
+          titleComponent={
+            <h1 className="text-4xl font-semibold text-white dark:text-white">
+              Discover <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                New type of Designs
+              </span>
+            </h1>
+          }
+        />
+      </div>
+      <div className='text-6xl text-white w-full text-center italic font-extrabold h-20'>
+        DSA
+      </div>
+      <div>
+        <p align="center"> <img align="center" src="https://leetcard.jacoblin.cool/dattuajay005?theme=dark&font=Encode%20Sans%20Semi%20Expanded&ext=heatmap" alt="LeetCode Stats"/></p>
+      </div>
+      
+      <SkillsProgressBar/>
+      <div>
+        
+      </div>
     </div>
   );
 }
