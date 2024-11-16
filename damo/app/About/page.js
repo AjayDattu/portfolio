@@ -139,7 +139,7 @@ const ColorSections = () => {
         color={"#ffffff"}
         refresh
       />
-        <iframe className="absolute top-10 w-full h-full" src="https://lottie.host/embed/a5688871-357c-4012-b8b5-ca6e080cef6d/HtcTX1wUF8.json"></iframe>
+        <iframe className="absolute w-[40%] h-[50%] right-0 top-0" src="https://lottie.host/embed/d3fb42eb-a3cc-48f5-a4bd-b48a76571464/2P4atuQkCZ.json"></iframe>
       
         <div className="flex flex-col text-white h-full w-full justify-center items-center p-8 gap-7">
           <div className="text-5xl flex items-center mb-4" data-aos="fade-left">

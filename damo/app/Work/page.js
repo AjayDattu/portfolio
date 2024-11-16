@@ -10,10 +10,10 @@ const TitleComponent = () => (
   </h1>
 );
 
-const RenderContainerScroll = () => (
+const RenderContainerScroll = (video) => (
   <ContainerScroll titleComponent={<TitleComponent />}>
     <video
-      src="https://youtu.be/wXXnNb2qJ_Q?si=HrZcGnNYmftLYOCl" // Sample video URL
+      src={video} // Sample video URL
       autoPlay
       loop
       muted
@@ -29,13 +29,13 @@ function Page() {
   return (
     <div className='bg-black flex flex-col h-full gap-8'>
        <div> 
-         <RenderContainerScroll />
+         <RenderContainerScroll video={"https://www.canva.com/design/DAGWoTB7yGY/dsO7boo0zQ0zlc-56__pog/watch?utm_content=DAGWoTB7yGY&utm_campaign=designshare&utm_medium=link&utm_source=editor"}/>
        </div> 
        <div> 
-         <RenderContainerScroll />
+         <RenderContainerScroll video={"https://www.canva.com/design/DAGWoTB7yGY/dsO7boo0zQ0zlc-56__pog/watch?utm_content=DAGWoTB7yGY&utm_campaign=designshare&utm_medium=link&utm_source=editor"}/>
        </div>
        <div> 
-         <RenderContainerScroll />
+         <RenderContainerScroll video={"https://www.canva.com/design/DAGWoTB7yGY/dsO7boo0zQ0zlc-56__pog/watch?utm_content=DAGWoTB7yGY&utm_campaign=designshare&utm_medium=link&utm_source=editor"}/>
        </div>
     </div>
   );

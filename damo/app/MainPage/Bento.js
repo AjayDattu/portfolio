@@ -43,11 +43,12 @@ export const VelocityText = () => {
         </motion.p>
          <Particles
         className="absolute inset-0"
-        quantity={100}
+        quantity={500}
         ease={80}
         color={"#ffffff"}
         refresh
       />
+      <iframe className="absolute top-6 w-[40%] h-[50%] inset-0" src="https://lottie.host/embed/0cffc084-e2a2-4187-8f47-34d5950473a8/dfqzii7Ut5.json"/>
 
       </div>
     </section>
