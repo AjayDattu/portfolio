@@ -1,5 +1,9 @@
 import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import SkillsProgressBar from '@/components/ui/DsaSkill';
+import GitHubStats from '@/components/ui/Gitui';
+import StatsSection from '@/components/ui/Gitui';
+import Particles from '@/components/ui/particles';
+import { TextHoverEffect } from '@/components/ui/text-hover-effect';
 import React from 'react';
 
 const RenderContainerScroll = ({ video, titleComponent }) => (
@@ -20,6 +24,11 @@ const RenderContainerScroll = ({ video, titleComponent }) => (
 function Page() {
   return (
     <div className="bg-black flex flex-col h-full gap-8">
+        <iframe className="absolute w-[50%] h-[50%] left-0 top-0 inset-0" src="https://lottie.host/embed/2b86e896-558c-4255-9f53-16f715871ff8/lqLhvKteyP.json"></iframe>
+        <div className='h-screen w-full'>
+           
+          <TextHoverEffect text="WORKS" className="z-10" />
+        </div>
       <div>
         <RenderContainerScroll
           video="https://res.cloudinary.com/dyny7wc0n/video/upload/v1731751142/Untitled_design_3_emrfn6.mp4"
@@ -47,6 +56,7 @@ function Page() {
         />
       </div>
       <div>
+    
         <RenderContainerScroll
           video="https://res.cloudinary.com/dyny7wc0n/video/upload/v1731750106/xbrmgcrdbzucxcatqd3l.mp4"
           titleComponent={
@@ -60,6 +70,7 @@ function Page() {
         />
       </div>
       <div>
+  
         <RenderContainerScroll
           video="https://res.cloudinary.com/dyny7wc0n/video/upload/v1731752164/Untitled_design_6_ihgzn9.mp4"
           titleComponent={
@@ -132,9 +143,8 @@ function Page() {
       </div>
       
       <SkillsProgressBar/>
-      <div>
-        
-      </div>
+      <GitHubStats/>
+
     </div>
   );
 }

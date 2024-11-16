@@ -1,6 +1,5 @@
 'use client'
- // Home.js
-'use client'
+
 import styles from './page.module.scss'
 import { useEffect, useState } from 'react';  
 import { motion } from 'framer-motion';
