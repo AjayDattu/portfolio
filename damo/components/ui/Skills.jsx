@@ -206,11 +206,9 @@ const Schedule = () => {
         transition={{ ease: "easeInOut", duration: 0.75 }}
         className="mb-20 text-4xl font-black uppercase text-zinc-50"
       >
-       <div data-aos="zoom-in" id='h'>SKILLS & INTERSTS</div>
+       
       </motion.h1> 
-      <IconCloud iconSlugs={slugs} />
-      
-      <HoverImageLinks/>
+     
        
     </section>
   );
