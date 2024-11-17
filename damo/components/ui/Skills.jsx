@@ -200,13 +200,6 @@ const Schedule = () => {
       id="launch-schedule"
       className="relative mx-auto px-4 py-48 text-white"
     >
-      <Particles
-        className="absolute inset-0"
-        quantity={500}
-        ease={80}
-        color={"#ffffff"}
-        refresh
-      />
       <motion.h1
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

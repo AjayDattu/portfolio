@@ -2,7 +2,6 @@ import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import SkillsProgressBar from '@/components/ui/DsaSkill';
 import GitHubStats from '@/components/ui/Gitui';
 import StatsSection from '@/components/ui/Gitui';
-import Particles from '@/components/ui/particles';
 import { TextHoverEffect } from '@/components/ui/text-hover-effect';
 import React from 'react';
 
@@ -25,7 +24,7 @@ function Page() {
   return (
     <div className="bg-black flex flex-col h-full gap-8">
         <iframe className="absolute w-[50%] h-[50%] left-0 top-0 inset-0" src="https://lottie.host/embed/2b86e896-558c-4255-9f53-16f715871ff8/lqLhvKteyP.json"></iframe>
-        <div className='h-screen w-full'>
+        <div className='h-screen w-full bg-black'>
            
           <TextHoverEffect text="WORKS" className="z-10" />
         </div>

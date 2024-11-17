@@ -30,7 +30,7 @@ export const VelocityText = () => {
   return (
     <section
       ref={targetRef}
-      className="h-[1000vh] bg-neutral-950 text-[yellow]"
+      className="h-[1000vh] text-[yellow]"
     >
       <div className="sticky relative top-0 flex h-screen items-center overflow-hidden">
         
@@ -41,13 +41,7 @@ export const VelocityText = () => {
         >
            SIH'23 Finalist | Prajwala Hackathon Best Impactful Solution | ECET 79th Rank | Solved 500+ Problems on LeetCode
         </motion.p>
-         <Particles
-        className="absolute inset-0"
-        quantity={500}
-        ease={80}
-        color={"#ffffff"}
-        refresh
-      />
+
       <iframe className="absolute top-6 w-[40%] h-[50%] inset-0" src="https://lottie.host/embed/0cffc084-e2a2-4187-8f47-34d5950473a8/dfqzii7Ut5.json"/>
 
       </div>

@@ -17,6 +17,14 @@ import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import IconCloud from "@/components/ui/icon-cloud";
+
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+
  
 const slugs = [
   "typescript",
@@ -56,63 +64,56 @@ function Page() {
       duration: 2000
     });
   }, []);
+  
+  useEffect(() => {
+    const sections = gsap.utils.toArray('.section');
+
+    sections.forEach((elem) => {
+      const color = elem.getAttribute('data-color');
+      ScrollTrigger.create({
+        trigger: elem,
+        start: 'top 5%',
+        end: 'bottom 5%',
+        markers: false,
+        onEnter: () => gsap.to('main', {
+          backgroundColor: color,
+          duration: 1.4,
+        }),
+        onLeave: () => gsap.to('main', {
+          backgroundColor: '#fef9ef',
+          duration: 1.4,
+        }),
+        onLeaveBack: () => gsap.to('main', {
+          backgroundColor: '#fef9ef',
+          duration: 1.4,
+        }),
+        onEnterBack: () => gsap.to('main', {
+          backgroundColor: color,
+          duration: 1.4,
+        }),
+      });
+    });
+
+    // Cleanup ScrollTrigger instances on component unmount
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
+  const changeColor = () => {
+    const section = document.getElementById('id');
+    section.setAttribute('data-color', '#000000');
+    console.log('change dark-mode');
+    ScrollTrigger.refresh();
+  };
   const words = ["Frontend Developer", "Coder", "Youtuber", "Designer"];
-  const content = [
-  {
-    title: "Collaborative Editing",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div
-        className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Collaborative Editing
-      </div>
-    ),
-  },
-  {
-    title: "Real time changes",
-    description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-    content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
-          src="/linear.webp"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover"
-          alt="linear board demo" />
-      </div>
-    ),
-  },
-  {
-    title: "Version control",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div
-        className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Version control
-      </div>
-    ),
-  },
-  {
-    title: "Running out of content",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div
-        className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
-      </div>
-    ),
-  },
-];
   return (
-    <div className="bg-black h-full flex flex-col items-center justify-center " data-aos="fade-right">
+    <main className=" h-full flex flex-col items-center justify-center " data-aos="fade-in">
+     <section data-color="#000" className="section flex flex-col items-center justify-center s-1">
       <CustomCursor/>
       <BackgroundBeamsWithCollision className="flex flex-col gap-6 text-left items-center px-4">
         <Svg />
-        <div className="w-full flex flex-col px-[400px] sm:flex-row items-center sm:items-start text-red-500 gap-3 sm:gap-6 md:gap-9" id='h'>
+        <div className="w-full flex flex-col px-[400px] sm:flex-row items-center sm:items-start text-red-500 gap-3 sm:gap-6 md:gap-9">
           <span className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl">a</span>
           <FlipWords 
             words={words} 
@@ -122,11 +123,13 @@ function Page() {
       </BackgroundBeamsWithCollision>
       <div className='w-full font-sans'>
       <SmoothScrollHero/>
-      <div className='text-7xl text-white text-center italic' data-aos="zoom-in" id='h'>Acheivements</div>
-        <VelocityText/>
       </div>
-        <VerticalTimelineComponent/>
-    </div>
+      </section>
+      <section data-color="#fff" className=" flex flex-col">
+          <VelocityText/>
+          <VerticalTimelineComponent/>
+        </section>
+    </main>
   );
 }
 

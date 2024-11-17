@@ -133,7 +133,7 @@ const ColorSections = () => {
 
         </div>
       </div>
-      <div data-color="#000" className="relative section h-screen flex items-center justify-center s-4 gpa-10 bg-black" id='e'>
+      <div data-color="#000" className="relative section h-screen flex items-center justify-center s-4 gpa-10 bg-black  " id='e'>
        <Particles
         className="absolute inset-0"
         quantity={1000}
