@@ -4,10 +4,10 @@
     position: fixed;
     right: 0;
     top: 0;
-    color: white;
+    color: black;
     z-index: 20;
     width: 100%;
-    background-color: red;
+    background-color: #fff;
     
     .body{
         box-sizing: border-box;
@@ -23,9 +23,8 @@
             font-size: 56px;
             gap: 12px;
             margin-top: 80px;
-            font-family: "Permanent Marker", cursive;
-                font-weight: 400;
-                font-style: normal;
+            font-weight: lighter;
+            font-style: normal;
 
             .header{
                 color: rgb(153, 153, 153);
@@ -37,7 +36,7 @@
 
             a{
                 text-decoration: none;
-                color: white;
+                color: black;
                 font-weight: 300;
                 cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><g fill="%2311DDFF"><path d="M18 7c-3 0-5.5-1.5-9 2s-2 6-2 9c0 5 4.1 5.63 6 5 3-1 1-3 4-6s5-1 6-4c.63-1.9 0-6-5-6Z"></path><circle cx="8.2" cy="4" r="2"></circle><circle cx="4" cy="8.2" r="2"></circle><circle cx="14" cy="3" r="2"></circle><circle cx="3" cy="14" r="2"></circle></g></svg>'),auto;
             }
