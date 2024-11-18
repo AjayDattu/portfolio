@@ -10,7 +10,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import useMousePosition from '../utils/useMousePosition';
 
-export default function Home() {
+export default function Entry() {
 
    useEffect(() => {
     AOS.init({
@@ -25,12 +25,6 @@ export default function Home() {
   return (
     <main className={`${styles.main} font-sans`} data-aos="fade-in">
           <div className="fixed">
-            <iframe
-              src="https://lottie.host/embed/3094c793-7b33-45d2-a3f5-2dd35c73bf63/M9xs6DUtv8.json"
-              className="w-full h-[200px] sm:h-[200px] md:h-[200px] lg:h-[200px] rounded-lg"
-              frameBorder="0"
-              allow="fullscreen"
-            ></iframe>
           </div>
           <motion.div 
             className={styles.mask}
@@ -41,16 +35,13 @@ export default function Home() {
             transition={{ type: "tween", ease: "backOut", duration:0.5}}
           >
             <p onMouseEnter={() => {setIsHovered(true)}} onMouseLeave={() => {setIsHovered(false)}}>
-              A Frontend Developer - with skills that haven't been replaced by A.I (yet) - making good shit only if the paycheck is equally good.
+              <img className="w-[100%] h-[50%]" src="https://media.licdn.com/dms/image/v2/D5622AQFhdV8IDlDG9Q/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1709402884622?e=1733961600&v=beta&t=j2nVEMwjGt1W7timW0gIKSeHeTtQn2GlETpUdFpcY7k"/>
             </p>
           </motion.div>
           
           <div className={styles.body}> 
-            <p>I'm a <span>selectively skilled</span> Frontend Developer with strong focus on producing high quality & impactful digital experience.</p>
+            <p  className='font-light'>Hi, I'm <span>Ajay Dattu</span>, but everyone calls me Damo. I'm from India.</p>
           </div>
-          <Link href="/MainPage" passHref className='fixed z-10 bottom-10 right-60'>
-            <Button/>
-          </Link>
     </main>
   );
 }

@@ -1,7 +1,7 @@
 "use client";;
 import { AnimatePresence, motion } from "framer-motion";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/components/lib/utils";
 
 export default function GradualSpacing({
   text,

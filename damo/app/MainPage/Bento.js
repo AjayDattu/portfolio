@@ -88,27 +88,21 @@ const AchievementsTable = () => {
   ];
 
   return (
-    <div className="h-full flex flex-col p-4 md:p-6 lg:p-10 space-y-16">
+    <div className="h-full flex flex-col p-4 md:p-6 lg:p-10 space-y-16 backdrop-blur-lg">
       {/* Education Section */}
       <div className="h-auto">
         <h1 className="text-3xl md:text-4xl font-light mt-12 mb-6 text-center text-white">
           Education
         </h1>
         <div className="relative space-y-6 md:space-y-8">
-          <Particles
-            className="absolute inset-0"
-            quantity={100}
-            ease={80}
-            color={'#ffffff'}
-            refresh
-          />
+          
           {education.map((edu, index) => (
             <div
               key={index}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-10 p-4 md:p-6 rounded-lg bg-opacity-30 "
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-10 p-4 md:p-6 rounded-lg"
             >
               <div
-                className="text-sm md:text-lg font-semibold text-blue-400 w-full sm:text-center"
+                className="text-sm md:text-lg font-semibold text-neutral-600 w-full sm:text-center"
                 data-aos="fade-right"
               >
                 {edu.year}
@@ -133,25 +127,19 @@ const AchievementsTable = () => {
       </div>
 
       {/* Experience Section */}
-      <div className="relative h-auto">
+      <div className="relative h-auto backdrop-blur-lg">
         <h1 className="text-3xl md:text-4xl font-light mt-12 mb-6 text-center text-white">
           Experience
         </h1>
         <div className="space-y-6 md:space-y-8">
-          <Particles
-            className="absolute inset-0"
-            quantity={100}
-            ease={80}
-            color={'#ffffff'}
-            refresh
-          />
+        
           {experience.map((exp, index) => (
             <div
               key={index}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-10 p-4 md:p-6 rounded-lg bg-opacity-30  backdrop-blur-lg"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-10 p-4 md:p-6 rounded-lg"
             >
               <div
-                className="text-sm md:text-lg font-semibold text-blue-400 w-full sm:text-center"
+                className="text-sm md:text-lg font-semibold text-neutral-600 w-full sm:text-center"
                 data-aos="fade-right"
               >
                 {exp.year}
@@ -171,7 +159,7 @@ const AchievementsTable = () => {
                     {exp.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="bg-blue-700 text-blue-100 text-xs md:text-sm px-2 py-1 rounded-full"
+                        className="bg-neutral-700 text-blue-100 text-xs md:text-sm px-2 py-1 rounded-full"
                       >
                         {tech}
                       </span>
@@ -190,20 +178,14 @@ const AchievementsTable = () => {
           Achievements
         </h1>
         <div className="relative space-y-6 md:space-y-8">
-          <Particles
-            className="absolute inset-0"
-            quantity={100}
-            ease={80}
-            color={'#ffffff'}
-            refresh
-          />
+         
           {achievements.map((achievement, index) => (
             <div
               key={index}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-10 p-4 md:p-6 rounded-lg bg-opacity-30"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-10 p-4 md:p-6 rounded-lg"
             >
               <div
-                className="text-sm md:text-lg font-semibold text-blue-400 w-full sm:text-center"
+                className="text-sm md:text-lg font-semibold text-neutral-600 w-full sm:text-center"
                 data-aos="fade-right"
               >
                 {achievement.year}
@@ -223,7 +205,7 @@ const AchievementsTable = () => {
                     {achievement.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="bg-blue-700 text-blue-100 text-xs md:text-sm px-2 py-1 rounded-full"
+                        className="bg-neutral-700 text-blue-100 text-xs md:text-sm px-2 py-1 rounded-full"
                       >
                         {tech}
                       </span>

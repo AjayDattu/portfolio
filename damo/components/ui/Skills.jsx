@@ -14,6 +14,7 @@ import { HoverImageLinks2 } from "./Skillset2";
 import "./style.css"
 import IconCloud from "./icon-cloud";
 import Particles from "./particles";
+import { DragCards } from "./DragCards";
  
 const slugs = [
   "typescript",
@@ -206,10 +207,8 @@ const Schedule = () => {
         transition={{ ease: "easeInOut", duration: 0.75 }}
         className="mb-20 text-4xl font-black uppercase text-zinc-50"
       >
-       
+       <DragCards/>
       </motion.h1> 
-     
-       
     </section>
   );
 };

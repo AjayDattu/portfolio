@@ -4,13 +4,6 @@ import Particles from './particles';
 const GitHubStats = () => {
   return (
     <div style={styles.container}>
-        <Particles
-        className="absolute inset-0"
-        quantity={500}
-        ease={80}
-        color={"#ffffff"}
-        refresh
-      />
       <h2 className='text-6xl italic font-bold'>⚡Git Stats ⚡</h2>
       <div style={styles.bentoContainer}>
         <div style={styles.bentoItem}>

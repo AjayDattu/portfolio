@@ -117,8 +117,8 @@ function Page() {
           />
         </p>
       </div>
-      {/* <SkillsProgressBar />
-      <GitHubStats /> */}
+      <SkillsProgressBar />
+      <GitHubStats />
     </div>
   );
 }
