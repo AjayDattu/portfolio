@@ -59,7 +59,7 @@ function Page() {
       <div className="h-screen">
         <div className="flex flex-col lg:flex-row w-full h-screen pt-20" data-aos="fade-left">
           <iframe
-            className="w-full h-full lg:w-1/2 md:w-full"
+            className="w-[75%] h-[75%] lg:w-1/2 md:w-full"
             src="https://lottie.host/embed/dce0b800-c131-45a8-b696-df2db655b752/ocTKs9ppjc.json"
             title="Lottie Animation"
           />

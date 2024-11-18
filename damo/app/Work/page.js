@@ -106,6 +106,8 @@ function Page() {
         </div>
       ))}
       <div className="text-6xl text-white w-full text-center italic font-extrabold h-20">
+        {/* <div></div>
+        <div></div> */}
         DSA
       </div>
       <div>
