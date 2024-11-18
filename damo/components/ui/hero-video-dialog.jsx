@@ -2,8 +2,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Play, XIcon } from "lucide-react";
-import { cn } from "../lib/utils";
-
+import { cn } from "@/lib/utils";
 
 const animationVariants = {
   "from-bottom": {
@@ -66,8 +65,8 @@ export default function HeroVideoDialog({
         <img
           src={thumbnailSrc}
           alt={thumbnailAlt}
-          width={1920}
-          height={1080}
+          width={1000}
+          height={800}
           className="w-full transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-md shadow-lg border" />
         <div
           className="absolute inset-0 flex items-center justify-center group-hover:scale-100 scale-[0.9] transition-all duration-200 ease-out rounded-2xl">
@@ -103,11 +102,14 @@ export default function HeroVideoDialog({
               </motion.button>
               <div
                 className="size-full border-2 border-white rounded-2xl overflow-hidden isolate z-[1] relative">
-                <iframe
+                <iframe src="https://www.youtube.com/embed/Rpb-2Agwu0o?si=QkuklUoROi9BBmGh" title="YouTube video player" className="size-full rounded-2xl"
+                  allowFullScreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                {/* <iframe
                   src={videoSrc}
                   className="size-full rounded-2xl"
                   allowFullScreen
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> */}
               </div>
             </motion.div>
           </motion.div>

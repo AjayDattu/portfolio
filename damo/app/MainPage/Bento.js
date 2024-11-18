@@ -44,7 +44,7 @@ const AchievementsTable = () => {
 
   const experience = [
     {
-      year: '2023',
+      year: '2024',
       title: 'Full Stack Developer Intern',
       description:
         'Worked as a full-stack developer intern at XYZ Company, developing web applications using React and Node.js.',
@@ -57,15 +57,7 @@ const AchievementsTable = () => {
         'Worked as a Java developer intern at ABC Technologies, building Java-based backend services and APIs.',
       technologies: ['Java', 'Spring Boot', 'MySQL'],
     },
-    {
-      year: '2024',
-      title: 'Blockchain Developer Intern',
-      description:
-        'Interned as a Blockchain developer, building smart contracts and decentralized applications using Solidity and Ethereum.',
-      technologies: ['Solidity', 'Ethereum', 'Smart Contracts', 'Truffle'],
-    },
   ];
-
   const education = [
     {
       year: '2022-2025',

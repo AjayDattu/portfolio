@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import { cn } from "@/components/lib/utils";
+import { cn } from "@/lib/utils";
 
 export function TimelineItem({
   event,

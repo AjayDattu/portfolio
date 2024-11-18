@@ -72,19 +72,19 @@ const ColorSections = () => {
          <div className='w-full'><Entry/></div>
          <SmoothScrollHero/> 
       </section>
-       <section data-color="#fff" className="relative section h-screen flex items-center justify-center s-4 gpa-10" id='e'>
+       <section data-color="#fff" className="relative section h-screen flex items-center justify-center s-4  p-20" id='e'>
          <div className="relative">
           <HeroVideoDialog
             className="dark:hidden block"
             animationStyle="from-center"
-            videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+            videoSrc="https://youtu.be/Rpb-2Agwu0o?si=QkuklUoROi9BBmGh"
             thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
             thumbnailAlt="Hero Video"
           />
           <HeroVideoDialog
             className="hidden dark:block"
             animationStyle="from-center"
-            videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+            videoSrc="https://youtu.be/Rpb-2Agwu0o?si=QkuklUoROi9BBmGh"
             thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
             thumbnailAlt="Hero Video"
           />

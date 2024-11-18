@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/components/lib/utils";
+import { cn } from "@/lib/utils";
 
 export function Contact() {
   const [formData, setFormData] = useState({
