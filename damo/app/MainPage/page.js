@@ -73,7 +73,7 @@ function Page() {
                 </h1>
                 <div className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl font-light text-gray-400 max-w-3xl mx-auto">
                   <p>
-                    I'm a passionate Frontend Developer, Coder, Youtuber, and Designer. I specialize in building beautiful, interactive web applications using modern technologies like React, JavaScript, and CSS. I constantly explore new tools and frameworks to create optimized user experiences.
+                    I specialize in building beautiful, interactive web applications using modern technologies like Nextjs,Reactjs,Animation Libraies,UI Libraies and Tailwind CSS. I constantly explore new tools and frameworks to create optimized user experiences.
                   </p>
                   <a href="/resume.pdf" className="mt-6 text-lg sm:text-xl md:text-2xl lg:text-3xl text-blue-500 cursor-pointer hover:underline">
                     Download Resume
@@ -88,7 +88,7 @@ function Page() {
       {/* Skills Section */}
       <div className="relative w-full font-sans h-full">
         <Particles className="absolute inset-0" quantity={100} ease={80} color="#ffffff" refresh />
-        <div className="h-full" data-aos="fade-in">
+        <div className="h-full" data-aos="zoom-in">
           <div  className="flex flex-col gap-3 font-light text-white h-20 text-center text-5xl p-10 h-screen">
             SKILLS & INTERESTS
             <IconCloud iconSlugs={slugs} />

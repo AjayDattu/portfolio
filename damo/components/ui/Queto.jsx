@@ -25,15 +25,15 @@ const QuoteAnimation = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       router.push("/Entry");
-    }, 2000);
+    }, 3000);
     return () => clearTimeout(timeout);
   }, []); 
 
   return (
     <div className="bg-black h-screen text-center align-middle justify-center items-center p-40">
       <WordPullUp
-        className="text-4xl font-bold text-white bg-black"
-        words="Passion  Perseverance  Excellence"
+        className="text-7xl md:text-4xl lg:text-7xl font-light text-white bg-black font-sourGummy"
+        words="Simplicity  conveys  clarity."
        />
     </div>
   );
