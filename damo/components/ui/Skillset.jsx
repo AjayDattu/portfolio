@@ -1,45 +1,38 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { FiArrowRight } from "react-icons/fi";
 
 export const HoverImageLinks = () => {
   return (
     <section className="p-4 md:p-8">
       <div className="mx-auto max-w-5xl">
-        <Link
+        <HoverItem
           heading="Frontend"
           subheading="React.js, Next.js, Tailwind CSS, SCSS, Redux"
-          href="#"
         />
-        <Link
+        <HoverItem
           heading="Backend"
           subheading="MongoDB, Node.js, Express.js, SQL"
-          href="#"
         />
-        <Link
+        <HoverItem
           heading="Libraries"
           subheading="GSAP, Shadecn, Ant Design, Material UI, Chakra UI"
-          href="#"
         />
-        <Link
+        <HoverItem
           heading="DSA"
           subheading="Trees, Arrays, Graphs, Linked Lists, Stacks"
-          href="#"
         />
-        <Link
+        <HoverItem
           heading="Interests"
           subheading="Reading Books, Space, Sci-Fi, Thriller Movies"
-          href="#"
         />
       </div>
     </section>
   );
 };
 
-const Link = ({ heading, subheading, href }) => {
+const HoverItem = ({ heading, subheading }) => {
   return (
-    <motion.a
-      href={href}
+    <motion.div
       initial="initial"
       whileHover="whileHover"
       className="group relative flex items-center justify-between border-b-2 border-neutral-700 py-4 transition-colors duration-500 hover:border-neutral-50 md:py-8"
@@ -89,9 +82,7 @@ const Link = ({ heading, subheading, href }) => {
         }}
         transition={{ type: "spring" }}
         className="relative z-10 p-4"
-      >
-    
-      </motion.div>
-    </motion.a>
+      ></motion.div>
+    </motion.div>
   );
 };

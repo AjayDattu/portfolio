@@ -32,13 +32,13 @@ function Page() {
     },
     {
       video: 'https://res.cloudinary.com/dyny7wc0n/video/upload/v1731751165/Untitled_design_4_g60jom.mp4',
-      title: 'ShopIn Ecommerce',
+      title: 'ShopIt Ecommerce',
       description: 'Developed an e-commerce platform with a seamless UI.',
       techStack: ['MERN','Redux','Ant Design','TailwindCSS'],
     },
     {
       video: 'https://res.cloudinary.com/dyny7wc0n/video/upload/v1731750106/xbrmgcrdbzucxcatqd3l.mp4',
-      title: 'Team-Pad',
+      title: 'Temp-Pad',
       description: 'File sharing app without login requirements.',
       techStack: ['React', 'Express.js', 'Tailwind CSS'],
     },

@@ -76,7 +76,7 @@ function Page() {
                 <p>
                   I specialize in building beautiful, interactive web applications using modern technologies like Nextjs, Reactjs, Animation Libraries, UI Libraries, and Tailwind CSS. I constantly explore new tools and frameworks to create optimized user experiences.
                 </p>
-                <a href="/resume.pdf" className="mt-6 text-lg sm:text-xl md:text-2xl lg:text-3xl text-neutral-600 cursor-pointer hover:underline">
+                <a href="https://drive.google.com/file/d/19_1CEIwt8tDtM3fTVHtiYMXePjqXLmhz/view?usp=sharing" className="mt-6 text-lg sm:text-xl md:text-2xl lg:text-3xl text-neutral-100 cursor-pointer hover:underline">
                   Download Resume
                 </a>
               </div>

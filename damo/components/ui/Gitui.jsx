@@ -35,6 +35,7 @@ const GitHubStats = () => {
 const styles = {
   container: {
     display: 'flex',
+    gap:"20px",
     flexDirection: 'column',
     alignItems: 'center',
     padding: '20px',
