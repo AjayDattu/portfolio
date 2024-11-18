@@ -23,7 +23,7 @@ const QuoteAnimation = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      router.push("/MainPage");
+      router.push("./MainPage");
     }, 3000);
     return () => clearTimeout(timeout);
   }, []); 
