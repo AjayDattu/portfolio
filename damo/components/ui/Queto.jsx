@@ -13,8 +13,7 @@ const quotes = ["Passion", "Hardwork", "Success"];
 const QuoteAnimation = () => {
   const [currentQuote, setCurrentQuote] = useState(quotes[0]);
   const [quoteIndex, setQuoteIndex] = useState(0);
-  const router = useRouter(); // Initialize useRouter
-
+  const router = useRouter();
   useEffect(() => {
     AOS.init({
       duration: 2000,
@@ -24,7 +23,7 @@ const QuoteAnimation = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      router.push("/Entry");
+      router.push("/MainPage");
     }, 3000);
     return () => clearTimeout(timeout);
   }, []); 
@@ -32,7 +31,7 @@ const QuoteAnimation = () => {
   return (
     <div className="bg-black h-screen text-center align-middle justify-center items-center p-40">
       <WordPullUp
-        className="text-7xl md:text-4xl lg:text-7xl font-light text-white bg-black font-sourGummy"
+        className="text-7xl md:text-4xl lg:text-9xl font-light text-white bg-black font-sourGummy"
         words="Simplicity  conveys  clarity."
        />
     </div>

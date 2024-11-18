@@ -20,6 +20,7 @@ import HoverImage from '@/components/ui/Hoverme';
 import { HoverImageLinks } from '@/components/ui/Skillset';
 import Particles from '@/components/ui/particles';
 import IconCloud from "@/components/ui/icon-cloud";
+import Meteors from '@/components/ui/meteors';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,17 +53,16 @@ function Page() {
   const words = ["Frontend Developer", "Coder", "Youtuber", "Designer"];
 
   return (
-    <main className="h-full flex flex-col bg-black" data-aos="fade-in">
+    <main className="h-full flex flex-col bg-black">
       <div className="h-screen backdrop-blur-lg">
-        <Particles className="absolute inset-0" quantity={100} ease={80} color="#ffffff" refresh />
-        <BackgroundBeamsWithCollision className="flex flex-col gap-6 text-left items-center px-4 h-screen">
-          <div className="flex flex-col lg:flex-row w-full h-screen pt-20">
+        
+          <div className="flex flex-col lg:flex-row w-full h-screen pt-20" data-aos="fade-left">
             <iframe
               className="w-full h-full lg:w-1/2 md:w-full"
               src="https://lottie.host/embed/dce0b800-c131-45a8-b696-df2db655b752/ocTKs9ppjc.json"
               title="Lottie Animation"
             />
-            <div className="flex flex-col gap-6 px-4 sm:px-6 md:px-8 lg:px-20 pt-32">
+            <div className="flex flex-col gap-6 px-4 sm:px-6 md:px-8 lg:px-20 pt-32" data-aos="fade-right">
               <Svg />
               <div className="text-3xl">
                 <h1 className="text-4xl sm:text-5xl md:text-4xl font-light leading-tight">
@@ -82,12 +82,12 @@ function Page() {
               </div>
             </div>
           </div>
-        </BackgroundBeamsWithCollision>
+          <Meteors number={4} />
       </div>
 
       {/* Skills Section */}
       <div className="relative w-full font-sans h-full">
-        <Particles className="absolute inset-0" quantity={100} ease={80} color="#ffffff" refresh />
+        
         <div className="h-full" data-aos="zoom-in">
           <div  className="flex flex-col gap-3 font-light text-white h-20 text-center text-5xl p-10 h-screen">
             SKILLS & INTERESTS
@@ -98,8 +98,9 @@ function Page() {
       </div>
 
       <AchievementsTable />
-
-      <div data-aos="zoom-in">
+       
+      <div data-aos="zoom-in"> 
+      <Meteors number={4} />
         <div className="flex flex-col h-[50vh] justify-center items-center">
           <iframe
             className="w-[30%] h-[50%]"

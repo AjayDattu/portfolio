@@ -1,3 +1,4 @@
+import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-with-collision';
 import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import SkillsProgressBar from '@/components/ui/DsaSkill';
 import GitHubStats from '@/components/ui/Gitui';
@@ -75,9 +76,11 @@ function Page() {
 
   return (
     <div className="bg-black flex flex-col h-full gap-8">
+      <BackgroundBeamsWithCollision className={"h-screen"}> 
       <div className="h-screen w-full bg-black">
         <TextHoverEffect text="WORKS" className="z-10" />
       </div>
+      </BackgroundBeamsWithCollision>  
       {videoData.map((item, index) => (
         <div key={index}>
           <RenderContainerScroll

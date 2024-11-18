@@ -94,7 +94,7 @@ const AchievementsTable = () => {
         <h1 className="text-3xl md:text-4xl font-light mt-12 mb-6 text-center text-white">
           Education
         </h1>
-        <div className="space-y-6 md:space-y-8">
+        <div className="relative space-y-6 md:space-y-8">
           <Particles
             className="absolute inset-0"
             quantity={100}
@@ -189,7 +189,7 @@ const AchievementsTable = () => {
         <h1 className="text-3xl md:text-4xl font-light mt-12 mb-6 text-center text-white">
           Achievements
         </h1>
-        <div className="space-y-6 md:space-y-8">
+        <div className="relative space-y-6 md:space-y-8">
           <Particles
             className="absolute inset-0"
             quantity={100}
